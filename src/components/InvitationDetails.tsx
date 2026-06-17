@@ -241,19 +241,19 @@ const InvitationDetails: React.FC = () => {
           </p>
 
           {/* Mayoun Celebration with flowers on corners */}
-          <div className="flex items-center justify-center mb-12">
-            <div className="relative">
+          <div className="flex items-center justify-center mb-12 px-4 overflow-visible">
+            <div className="relative px-10 py-6">
               {/* Corner flowers */}
-              <div className="absolute -left-10 -top-6 animate-sparkle">
+              <div className="absolute -left-1 -top-1 animate-sparkle">
                 <Flower color="#FF1493" size={28} />
               </div>
-              <div className="absolute -right-10 -top-6 animate-sparkle" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute -right-1 -top-1 animate-sparkle" style={{ animationDelay: '0.2s' }}>
                 <Flower color="#FF8C00" size={28} rotate={90} />
               </div>
-              <div className="absolute -left-10 -bottom-6 animate-sparkle" style={{ animationDelay: '0.4s' }}>
+              <div className="absolute -left-1 -bottom-1 animate-sparkle" style={{ animationDelay: '0.4s' }}>
                 <Flower color="#BEF264" size={28} rotate={180} />
               </div>
-              <div className="absolute -right-10 -bottom-6 animate-sparkle" style={{ animationDelay: '0.6s' }}>
+              <div className="absolute -right-1 -bottom-1 animate-sparkle" style={{ animationDelay: '0.6s' }}>
                 <Flower color="#FFD17A" size={28} rotate={270} />
               </div>
 
@@ -265,8 +265,8 @@ const InvitationDetails: React.FC = () => {
           </div>
 
           {/* Couple Names with heart divider */}
-          <div ref={namesRef} className="text-center mb-12">
-            <div className="flex items-center justify-center gap-8">
+          <div ref={namesRef} className="text-center mb-12 px-6">
+            <div className="flex items-center justify-center gap-5">
               <span className="font-pinyon text-5xl md:text-7xl text-mustard-yellow text-magical-glow animate-glow-pulse">Aleeza</span>
               <div className="flex flex-col items-center">
                 <Heart className="w-10 h-10 text-hot-pink animate-glow-pulse drop-shadow-[0_0_15px_rgba(255,20,147,0.6)] fill-current" />
@@ -289,13 +289,34 @@ const InvitationDetails: React.FC = () => {
 
           {/* Date Section */}
           <div ref={dateRef} className="text-center">
-            <p className="font-cinzel text-2xl md:text-4xl tracking-[0.4em] text-mustard-yellow text-magical-glow">
-              JULY 10, 2026
-            </p>
-            <p className="font-playfair text-cream/85 mt-2 text-lg md:text-xl">at</p>
-            <p className="font-cinzel text-base tracking-[0.25em] text-lime-green/80 mt-2 uppercase">
-              6:30 IN THE EVENING
-            </p>
+            {/* Date with decorative flowers */}
+            <div className="flex items-center justify-center gap-6 mb-4">
+              <Flower color="#FF69B4" size={22} rotate={-45} />
+              <p className="font-pinyon text-4xl md:text-5xl text-mustard-yellow text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 18px rgba(255,185,15,0.9), 0 0 30px rgba(255,20,147,0.6)' }}>
+                July 10, 2026
+              </p>
+              <Flower color="#FF69B4" size={22} rotate={45} />
+            </div>
+
+            {/* Decorative divider */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-lime-green/40" />
+              <Heart className="w-5 h-5 text-lime-green fill-current animate-sparkle" />
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-lime-green/40" />
+            </div>
+
+            {/* Time with decorative frame */}
+            <div className="inline-block relative px-5 py-2.5 rounded-full border-2 border-lime-green/40 bg-gradient-to-r from-lime-green/10 via-hot-pink/10 to-mustard-yellow/10 backdrop-blur-sm shadow-[0_0_20px_rgba(190,242,100,0.2)]">
+              {/* Corner decorations on frame */}
+              <div className="absolute -top-1.5 -left-1.5 w-3 h-3 border-t-2 border-l-2 border-hot-pink rounded-tl-md" />
+              <div className="absolute -top-1.5 -right-1.5 w-3 h-3 border-t-2 border-r-2 border-mustard-yellow rounded-tr-md" />
+              <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 border-b-2 border-l-2 border-lime-green rounded-bl-md" />
+              <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-hot-pink rounded-br-md" />
+              
+              <p className="font-cinzel text-base md:text-lg tracking-[0.25em] text-hot-pink text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 12px rgba(255,20,147,0.9), 0 0 20px rgba(255,185,15,0.6)' }}>
+                6:30 PM
+              </p>
+            </div>
           </div>
 
           {/* Bottom Decorative Border */}
