@@ -122,15 +122,20 @@ gsap.to(titleRef.current, {
         <img
           src={IMAGES.VENUE_BG}
           alt="Venue background"
-          className="h-full w-full object-cover opacity-10 brightness-[0.2]"
+          className="h-full w-full object-cover opacity-30 brightness-[0.45]"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-deep-purple/80 via-hot-pink/60 to-lime-green/50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-deep-purple/70 via-hot-pink/40 to-lime-green/35 mix-blend-multiply" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4">
         <div
           ref={cardRef}
-          className="relative w-full rounded-[28px] border border-mehndi-orange/30 glassmorphic-magic p-8 shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-12"
+          className="relative w-full rounded-[28px] border border-mehndi-orange/50 p-8 shadow-[0_28px_80px_rgba(0,0,0,0.6)] backdrop-blur-2xl md:p-12"
+          style={{
+            background: 'linear-gradient(180deg, rgba(10,8,15,0.65), rgba(20,10,18,0.65))',
+            boxShadow: '0 30px 90px rgba(12,8,20,0.6), inset 0 0 60px rgba(255,185,15,0.06)',
+            borderColor: 'rgba(255,140,0,0.18)'
+          }}
         >
           {[...Array(12)].map((_, i) => (
             <div
@@ -152,17 +157,22 @@ gsap.to(titleRef.current, {
               <div className="text-left">
                 <h2
                   ref={titleRef}
-                  className="mb-2 font-cinzel text-4xl tracking-[0.15em] text-mehndi-orange text-magical-glow md:text-6xl"
+                  className="mb-2 font-cinzel text-4xl tracking-[0.12em] md:text-6xl"
+                  style={{
+                    color: '#FFD580',
+                    textShadow: '0 6px 26px rgba(255,185,15,0.95), 0 0 40px rgba(255,20,147,0.25)',
+                    lineHeight: 1
+                  }}
                 >
                   Mayoun Celebration
                   <br />
-                  NIGHT
+                  <span style={{ color: '#FFB84D' }}>NIGHT</span>
                 </h2>
                 <div className="h-px w-32 bg-gradient-to-r from-mehndi-orange to-transparent opacity-50" />
               </div>
 
               <div ref={timeRef} className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-lime-green/40 bg-lime-green/10">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-lime-green/40 bg-gradient-to-br from-lime-green/8 to-transparent">
                   <svg
                     width="24"
                     height="24"
@@ -178,8 +188,8 @@ gsap.to(titleRef.current, {
                 </div>
 
                 <div>
-                  <p className="font-playfair text-2xl text-mehndi-orange">6:30 PM</p>
-                  <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-lime-green/60">
+                  <p className="font-playfair text-2xl md:text-3xl" style={{ color: '#FFE6B3', textShadow: '0 6px 18px rgba(0,0,0,0.6)' }}>6:30 PM</p>
+                  <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-lime-green/70">
                     In the Evening
                   </p>
                 </div>
@@ -189,7 +199,8 @@ gsap.to(titleRef.current, {
                 ref={locationRef}
                 type="button"
                 onClick={openMaps}
-                className="group block w-full rounded-xl border border-white/10 bg-white/5 p-6 text-left transition-all duration-500 hover:border-lime-green/40 hover:bg-gradient-to-r from-hot-pink/20 via-mehndi-orange/20 to-lime-green/20 hover:shadow-[0_0_30px_rgba(255,140,0,0.3)] hover:scale-[1.02]"
+                className="group block w-full rounded-xl border border-royal-gold/20 p-6 text-left transition-all duration-400 hover:border-lime-green/40 hover:scale-[1.01]"
+                style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))', boxShadow: '0 10px 30px rgba(0,0,0,0.45), 0 0 30px rgba(255,185,15,0.04)'}}
               >
                 <div className="flex gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-lime-green/10 text-lime-green shadow-[0_0_15px_rgba(190,242,100,0.3)]">
@@ -207,16 +218,16 @@ gsap.to(titleRef.current, {
                   </div>
 
                   <div>
-                    <h3 className="font-cinzel text-lg text-mehndi-orange text-magical-glow transition-colors group-hover:text-hot-pink">
+                    <h3 className="font-cinzel text-lg md:text-xl text-royal-gold transition-colors" style={{ textShadow: '0 6px 22px rgba(255,185,15,0.85)' }}>
                       RAZBERRY'S WEDDING VENUE
                     </h3>
-                    <p className="font-playfair text-sm italic text-lime-green/70">Frenchtown, NJ</p>
-                    <p className="mt-2 font-montserrat text-xs leading-relaxed text-cream/70">
+                    <p className="font-playfair text-sm italic text-cream/95">Frenchtown, NJ</p>
+                    <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/90">
                       834 NJ-12
                       <br />
                       Frenchtown, NJ 08825
                     </p>
-                    <div className="mt-4 flex items-center gap-2 font-cinzel text-[10px] tracking-widest text-lime-green/60 transition-colors group-hover:text-hot-pink">
+                    <div className="mt-4 flex items-center gap-2 font-cinzel text-[11px] tracking-widest text-mustard-yellow/90">
                       <svg
                         width="12"
                         height="12"
@@ -237,9 +248,9 @@ gsap.to(titleRef.current, {
                 ref={badgeRef}
                 className="inline-flex items-center gap-3 rounded-full px-5 py-2"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(120, 81, 169, 0.3), rgba(75, 0, 130, 0.25), rgba(120, 81, 169, 0.3))',
-                  border: '1px solid rgba(120, 81, 169, 0.5)',
-                  boxShadow: '0 0 20px rgba(120, 81, 169, 0.4), 0 0 35px rgba(75, 0, 130, 0.3)'
+                  background: 'linear-gradient(135deg, rgba(120, 81, 169, 0.45), rgba(75, 0, 130, 0.35))',
+                  border: '1px solid rgba(255,185,15,0.28)',
+                  boxShadow: '0 10px 40px rgba(255,185,15,0.08), 0 0 50px rgba(75,0,130,0.25)'
                 }}
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" className="text-royal-purple">

@@ -69,28 +69,28 @@ const GuestBook: React.FC = () => {
 
               <form onSubmit={handleSubmit} className="relative space-y-6">
                 <div className="space-y-2">
-                  <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                     Your Name
                   </label>
                   <input
                     type="text"
                     placeholder="Your full name"
                     required
-                    className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-soft-yellow placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
+                    className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                     value={formData.name}
                     onChange={(e) => updateField('name', e.target.value)}
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                     Words Of Love
                   </label>
                   <textarea
                     placeholder="Share your blessings, prayers, and beautiful wishes..."
                     required
                     rows={6}
-                    className="w-full resize-none rounded-[1.6rem] border border-mustard-yellow/20 bg-black/20 px-5 py-5 text-soft-yellow placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat leading-relaxed focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
+                    className="appearance-none w-full resize-none rounded-[1.6rem] border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-5 text-cream placeholder:text-cream/100 outline-none transition-all duration-300 font-montserrat leading-relaxed hover:bg-hot-pink/28 focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                     value={formData.message}
                     onChange={(e) => updateField('message', e.target.value)}
                   />

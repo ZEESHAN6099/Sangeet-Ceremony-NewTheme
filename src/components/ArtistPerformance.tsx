@@ -1,9 +1,29 @@
-import React, { useState } from 'react';
-import { IMAGES } from '../utils/images';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import { Heart } from 'lucide-react';
 
 const ArtistPerformance: React.FC = () => {
-  const [imageMissing, setImageMissing] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const wordsRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const animatedHeadingRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    // Slight card float for magical feeling
+    if (cardRef.current) {
+      gsap.to(cardRef.current, { y: -8, duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    }
+
+    // Animated rotating words (one at a time)
+    const words = wordsRef.current.filter(Boolean) as HTMLElement[];
+    if (words.length) {
+      gsap.set(words, { autoAlpha: 0, y: 10, scale: 0.9 });
+      const tlWords = gsap.timeline({ repeat: -1, repeatDelay: 0.6 });
+      words.forEach((w) => {
+        tlWords.to(w, { autoAlpha: 1, y: 0, scale: 1, duration: 0.65, ease: 'power2.out' })
+               .to(w, { autoAlpha: 0, y: -8, scale: 0.88, duration: 0.6, ease: 'power2.in' }, '+=1');
+      });
+    }
+  }, []);
 
   return (
     <section id="artist" className="section-container panel bg-deep-purple">
@@ -33,44 +53,23 @@ const ArtistPerformance: React.FC = () => {
               <p className="font-cinzel text-[11px] tracking-[0.45em] text-mustard-yellow/90">TOGETHER AS ONE</p>
             </div>
 
-            <div className="relative rounded-[2rem] border border-mustard-yellow/40 glassmorphic-magic p-4 shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
-              <div className="rounded-[1.7rem] border border-lime-green/30 bg-gradient-to-b from-mustard-yellow/10 to-transparent p-3">
-                <div className="relative overflow-hidden rounded-[1.4rem] border border-hot-pink/40 bg-black/30">
-                  <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-28 bg-gradient-to-b from-white/10 to-transparent" />
-                  <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top,_rgba(255,185,15,0.2),_transparent_45%)]" />
-
-                  {!imageMissing ? (
-                    <img
-                      src={IMAGES.FAMILY_GATHERING}
-                      alt="Family Gathering"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={() => {
-                        setImageMissing(true);
-                      }}
-                    />
-                  ) : (
-                    <div className="flex aspect-[3/4] h-full w-full items-center justify-center bg-gradient-to-br from-hot-pink/70 via-mustard-yellow/50 to-lime-green/70 px-8 text-center">
-                      <p className="font-cinzel text-sm tracking-[0.25em] text-mustard-yellow/80">
-                        FAMILY IMAGE
-                      </p>
+            <div ref={cardRef} className="relative rounded-[2rem] border border-mustard-yellow/40 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] bg-gradient-to-b from-deep-purple/80 to-transparent">
+              <div className="rounded-[1.7rem] border border-lime-green/30 p-6 overflow-hidden relative" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12))' }}>
+                <div className="relative aspect-[3/4] rounded-[1.4rem] flex items-center justify-center">
+                  <div className="text-center px-6">
+                    <h3 ref={animatedHeadingRef} className="font-great-vibes text-5xl md:text-6xl text-mustard-yellow drop-shadow-lg mb-4">SOULS & STORIES</h3>
+                    <div className="relative h-12 md:h-16">
+                      {['LOVE', 'LAUGHTER', 'MUSIC', 'MEMORIES', 'DANCE'].map((w, i) => (
+                        <span
+                          key={w}
+                          ref={(el) => (wordsRef.current[i] = el)}
+                          className="absolute inset-0 flex items-center justify-center font-playfair text-2xl md:text-3xl text-hot-pink opacity-0 transform scale-90"
+                        >
+                          {w}
+                        </span>
+                      ))}
                     </div>
-                  )}
-
-                  <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black/20 to-transparent" />
-                  <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black/20 to-transparent" />
-
-                  <div className="absolute bottom-0 left-0 right-0 z-20 p-7 bg-gradient-to-t from-deep-purple via-deep-purple/80 to-transparent">
-                    <div className="mb-3 flex items-center gap-3">
-                      <div className="h-px flex-1 bg-gradient-to-r from-transparent via-hot-pink/35 to-mustard-yellow/20" />
-                      <div className="h-2 w-2 rotate-45 border border-lime-green/50" />
-                      <div className="h-px flex-1 bg-gradient-to-l from-transparent via-hot-pink/35 to-mustard-yellow/20" />
-                    </div>
-                    <h3 className="text-center font-cinzel text-3xl tracking-[0.28em] text-mustard-yellow md:text-4xl text-magical-glow">
-                      FAMILY LOVE
-                    </h3>
-                    <p className="mt-3 text-center font-cinzel text-xs tracking-[0.45em] text-lime-green/90">
-                      CELEBRATING TOGETHER
-                    </p>
+                    <p className="mt-4 text-xs text-lime-green/90">CELEBRATING TOGETHER</p>
                   </div>
                 </div>
               </div>

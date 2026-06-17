@@ -152,14 +152,17 @@ const InvitationDetails: React.FC = () => {
           <div ref={el => cornerRefs.current[3] = el} className="absolute -bottom-3 -right-3 w-16 h-16 border-b-3 border-r-3 border-mustard-yellow rounded-br-[1.5rem] shadow-[0_0_15px_rgba(255,185,15,0.5)]" />
 
           {/* Hosts Section */}
-          <div ref={hostsRef} className="text-center mb-10">
-            <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+          <div ref={hostsRef} className="text-center mb-8" role="list" aria-label="Hosts">
+            <p className="mb-4 font-cinzel text-sm tracking-wider text-cream/95 uppercase">Hosted by</p>
+            <div className="flex flex-wrap justify-center gap-4">
               {hosts.map((host, index) => (
-                <div key={index} className="relative group">
-                  <span className="font-cinzel text-base md:text-lg tracking-[0.3em] text-mustard-yellow uppercase text-magical-glow">
-                    {host.name}
-                  </span>
-                  <div className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-hot-pink/70 via-lime-green/70 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                <div key={index} role="listitem" className="transform transition-all duration-300 hover:scale-105">
+                  <div className="px-5 py-2 rounded-full bg-gradient-to-r from-black/40 to-black/30 border border-hot-pink/20 shadow-[0_10px_30px_rgba(0,0,0,0.6)]" style={{backdropFilter: 'blur(6px)'}}>
+                    <span className="font-playfair text-lg md:text-xl tracking-wide text-cream/100 font-bold drop-shadow-[0_6px_24px_rgba(0,0,0,0.6)]">
+                      {host.name}
+                    </span>
+                    <div className="h-1 mt-2 rounded-full mx-auto w-10" style={{background: 'linear-gradient(90deg, rgba(255,185,15,0.9), rgba(255,20,147,0.8))'}} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -204,88 +207,20 @@ const InvitationDetails: React.FC = () => {
 
           {/* Couple Names */}
           <div ref={namesRef} className="text-center mb-6">
-            {/* Outer frame glow */}
-            <div className="relative mx-auto" style={{ maxWidth: '720px' }}>
-              {/* Blurred halo behind the frame */}
-              <div className="absolute inset-0 rounded-3xl blur-xl opacity-60"
-                style={{ background: 'linear-gradient(135deg, #16a34a, #FFB90F, #FF8C00, #16a34a)' }} />
+            <div className="relative mx-auto" style={{ maxWidth: '760px' }}>
+              <div className="absolute inset-0 rounded-3xl -z-10" style={{ background: 'radial-gradient(ellipse at center, rgba(255,185,15,0.06), transparent 35%)' }} />
 
-              {/* Frame */}
-              <div className="relative rounded-3xl px-6 pt-6 pb-5"
-                style={{
-                  background: 'linear-gradient(160deg, rgba(10,50,10,0.92) 0%, rgba(30,20,0,0.92) 50%, rgba(10,50,10,0.92) 100%)',
-                  border: '2px solid rgba(74,222,128,0.55)',
-                  boxShadow: '0 0 0 1px rgba(255,185,15,0.2), 0 0 30px rgba(74,222,128,0.35), 0 0 55px rgba(255,140,0,0.25), inset 0 0 30px rgba(0,0,0,0.4)',
-                }}>
-
-                {/* Top mehndi ornament row */}
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, transparent, #4ade80, #FFB90F)' }} />
-                  {/* Mehndi leaf SVG */}
-                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-                    <path d="M20 4 C20 4 8 12 8 22 C8 30 14 36 20 36 C26 36 32 30 32 22 C32 12 20 4 20 4Z" fill="rgba(74,222,128,0.85)" />
-                    <path d="M20 4 L20 36" stroke="#FFB90F" strokeWidth="1.2" />
-                    <path d="M12 16 Q20 20 28 16" stroke="#FFB90F" strokeWidth="0.8" fill="none" />
-                    <path d="M10 22 Q20 27 30 22" stroke="#FFB90F" strokeWidth="0.8" fill="none" />
-                  </svg>
-                  <svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="#FFB90F" /><circle cx="12" cy="12" r="7" fill="none" stroke="rgba(74,222,128,0.7)" strokeWidth="1" /></svg>
-                  <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-                    <path d="M20 4 C20 4 8 12 8 22 C8 30 14 36 20 36 C26 36 32 30 32 22 C32 12 20 4 20 4Z" fill="rgba(74,222,128,0.85)" transform="scale(-1,1) translate(-40,0)" />
-                    <path d="M20 4 L20 36" stroke="#FFB90F" strokeWidth="1.2" />
-                    <path d="M12 16 Q20 20 28 16" stroke="#FFB90F" strokeWidth="0.8" fill="none" />
-                    <path d="M10 22 Q20 27 30 22" stroke="#FFB90F" strokeWidth="0.8" fill="none" />
-                  </svg>
-                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, transparent, #4ade80, #FFB90F)' }} />
-                </div>
-
-                {/* Names row */}
-                <div className="flex items-center justify-center gap-4 md:gap-6">
-                  {/* Aleeza */}
-                  <div className="relative">
-                    <span className="font-pinyon text-7xl md:text-8xl block leading-none"
-                      style={{
-                        color: '#4ade80',
-                        textShadow: '0 0 18px rgba(74,222,128,1), 0 0 40px rgba(74,222,128,0.7), 0 0 65px rgba(255,185,15,0.5)',
-                        filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6))',
-                      }}>
-                      Aleeza
-                    </span>
-                    <div className="mt-1 h-0.5 w-full rounded-full"
-                      style={{ background: 'linear-gradient(to right, transparent, #4ade80, #FFB90F, transparent)' }} />
+              <div className="relative rounded-3xl px-10 pt-8 pb-8 border border-transparent" style={{background: 'linear-gradient(135deg, rgba(48,12,80,0.78), rgba(115,15,80,0.62))', boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(115,15,80,0.08)', backdropFilter: 'blur(6px)'}}>
+                <div className="flex flex-col items-center gap-6">
+                  <div className="text-center">
+                    <p className="font-cinzel text-sm tracking-widest text-mustard-yellow/95 uppercase mb-2">Celebrating</p>
+                    <div className="flex items-end gap-6 justify-center">
+                      <h3 className="font-great-vibes text-6xl md:text-7xl leading-none" style={{display: 'inline-block', background: 'linear-gradient(90deg,#FFD580,#FF8C00)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Aleeza</h3>
+                      <span className="font-playfair text-3xl md:text-4xl text-cream/95 font-semibold">&</span>
+                      <h3 className="font-great-vibes text-6xl md:text-7xl leading-none" style={{display: 'inline-block', background: 'linear-gradient(90deg,#FF8C00,#FF1493)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Ibrahim</h3>
+                    </div>
+                    <div className="mt-3 h-1 w-48 mx-auto rounded-full" style={{background: 'linear-gradient(90deg, rgba(255,185,15,0.9), rgba(255,20,147,0.8))'}} />
                   </div>
-
-                  {/* Ampersand with mehndi ring */}
-                  <div className="flex flex-col items-center gap-1">
-                    <svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#4ade80" strokeWidth="1.5" /><circle cx="12" cy="12" r="4" fill="#FFB90F" /></svg>
-                    <span className="font-playfair text-3xl md:text-4xl font-bold leading-none"
-                      style={{ color: '#FFB90F', textShadow: '0 0 15px rgba(255,185,15,1), 0 0 30px rgba(255,140,0,0.8)' }}>
-                      &
-                    </span>
-                    <svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#4ade80" strokeWidth="1.5" /><circle cx="12" cy="12" r="4" fill="#FFB90F" /></svg>
-                  </div>
-
-                  {/* Ibrahim */}
-                  <div className="relative">
-                    <span className="font-pinyon text-7xl md:text-8xl block leading-none"
-                      style={{
-                        color: '#4ade80',
-                        textShadow: '0 0 18px rgba(74,222,128,1), 0 0 40px rgba(74,222,128,0.7), 0 0 65px rgba(255,185,15,0.5)',
-                        filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.6))',
-                      }}>
-                      Ibrahim
-                    </span>
-                    <div className="mt-1 h-0.5 w-full rounded-full"
-                      style={{ background: 'linear-gradient(to right, transparent, #FFB90F, #4ade80, transparent)' }} />
-                  </div>
-                </div>
-
-                {/* Bottom mehndi ornament row */}
-                <div className="flex items-center justify-center gap-3 mt-4">
-                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to right, transparent, #FF8C00, #FFB90F)' }} />
-                  <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 2 L14.5 9.5 L22 9.5 L16 14.5 L18.5 22 L12 17.5 L5.5 22 L8 14.5 L2 9.5 L9.5 9.5Z" fill="#FF8C00" /></svg>
-                  <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 2 L14.5 9.5 L22 9.5 L16 14.5 L18.5 22 L12 17.5 L5.5 22 L8 14.5 L2 9.5 L9.5 9.5Z" fill="#FFB90F" /></svg>
-                  <svg width="10" height="10" viewBox="0 0 24 24"><path d="M12 2 L14.5 9.5 L22 9.5 L16 14.5 L18.5 22 L12 17.5 L5.5 22 L8 14.5 L2 9.5 L9.5 9.5Z" fill="#FF8C00" /></svg>
-                  <div className="h-px flex-1" style={{ background: 'linear-gradient(to left, transparent, #FF8C00, #FFB90F)' }} />
                 </div>
               </div>
             </div>

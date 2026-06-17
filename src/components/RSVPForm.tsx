@@ -79,11 +79,12 @@ const RSVPForm: React.FC = () => {
               <div className="h-2 w-2 rotate-45 border border-mustard-yellow/70 animate-sparkle" />
               <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
             </div>
-            <h2 className="mb-2 font-pinyon text-5xl text-mustard-yellow text-magical-glow md:text-6xl">RSVP</h2>
-            <p className="font-cinzel text-[10px] tracking-[0.35em] text-lime-green/80 uppercase">
+<h2 className="mb-2 font-['Cinzel_Decorative',serif] font-light text-5xl tracking-[0.2em] text-mustard-yellow md:text-6xl filter drop-shadow-[0_2px_10px_rgba(255,20,147,0.7)]">
+  RSVP
+</h2>            <p className="font-cinzel text-[11px] tracking-[0.35em] text-cream/95 uppercase text-magical-glow">
               A graceful reply is requested
             </p>
-            <p className="mb-4 font-cinzel text-xs font-semibold tracking-[0.25em] text-[#E68A00] uppercase filter drop-shadow-[0_0_8px_rgba(230,138,0,0.9)] [text-shadow:0_0_12px_rgba(255,165,0,0.8)]">
+            <p className="mb-4 font-cinzel text-sm font-semibold tracking-[0.25em] text-mustard-yellow/95 uppercase filter drop-shadow-[0_0_10px_rgba(230,138,0,0.95)] [text-shadow:0_0_14px_rgba(255,165,0,0.9)]">
               Kindly reply by June 22nd, 2026
             </p>
           </div>
@@ -91,13 +92,13 @@ const RSVPForm: React.FC = () => {
           <form onSubmit={handleSubmit} className="relative space-y-4">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2 md:col-span-2">
-<label className="px-1 font-cinzel text-xs tracking-widest text-pastel-yellow uppercase">
+            <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                    Full Name
                  </label>
                  <input
                    type="text"
                    required
-                   className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-lavender placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-royal-purple/70 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(120,81,169,0.3)]"
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                    placeholder="Your full name"
                    value={formData.name}
                    onChange={(e) => updateField('name', e.target.value)}
@@ -105,26 +106,26 @@ const RSVPForm: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
+                <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                   Email Address
                 </label>
                 <input
                   type="email"
                   required
-                  className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-soft-yellow placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) => updateField('email', e.target.value)}
                 />
               </div>
               <div className="space-y-2">
-                <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
+                <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                   Phone Number
                 </label>
                 <input
                   type="tel"
                   required
-                  className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-soft-yellow placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                   placeholder="+1 234 567 890"
                   value={formData.phone}
                   onChange={(e) => updateField('phone', e.target.value)}
@@ -133,12 +134,12 @@ const RSVPForm: React.FC = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
+              <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
                 Will you be attending?
               </label>
               <select
                 required
-                className="w-full cursor-pointer appearance-none rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-soft-yellow outline-none transition-all duration-300 font-montserrat focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
+                  className="appearance-none w-full cursor-pointer rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
                 value={formData.attending}
                 onChange={(e) => updateField('attending', e.target.value)}
               >
@@ -155,11 +156,11 @@ const RSVPForm: React.FC = () => {
             </div>
 
             <div className="rounded-[1.6rem] border border-lime-green/20 bg-white/5 p-5 text-center glassmorphic-magic">
-              <p className="font-cinzel text-[11px] tracking-[0.3em] text-lime-green/80 uppercase">
-                RSVP Preview
-              </p>
-              <p className="mt-3 font-playfair text-2xl text-mustard-yellow text-magical-glow">{attendanceLabel}</p>
-              <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/80">
+              <p className="font-cinzel text-sm md:text-base tracking-[0.28em] text-white uppercase font-bold filter drop-shadow-[0_2px_8px_rgba(255,185,15,1)] [text-shadow:0_0_12px_rgba(255,185,15,0.8)]">
+  RSVP Preview
+</p>
+              <p className="mt-3 font-playfair text-2xl md:text-3xl text-hot-pink/95 font-semibold text-magical-glow">{attendanceLabel}</p>
+              <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
                 On submit, your mail app opens a ready-made RSVP draft addressed to
                 {' '}
                 <span className="text-hot-pink text-magical-glow">Sana Iqbal</span>.
