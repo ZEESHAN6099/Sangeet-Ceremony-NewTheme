@@ -77,7 +77,7 @@ const Home: React.FC = () => {
   return (
     <main 
       ref={containerRef}
-      className={`relative min-h-screen bg-maroon-dark transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-100'}`}
+      className={`relative min-h-screen bg-mehndi-pink-dark transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-100'}`}
     >
       <AudioControl />
       <ParticleBackground />
@@ -95,11 +95,11 @@ const Home: React.FC = () => {
 
       {/* Decorative Sidebar (Optional) */}
       <div className="fixed left-6 top-1/2 -translate-y-1/2 z-[150] hidden lg:flex flex-col gap-8">
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
-        <p className="font-cinzel text-[10px] tracking-[0.5em] text-gold/40 vertical-text uppercase">
+        <div className="h-32 w-px bg-gradient-to-b from-transparent via-royal-gold/50 to-transparent" />
+        <p className="font-cinzel text-[10px] tracking-[0.5em] text-royal-gold/40 vertical-text uppercase">
           Aleeza & Ibrahim
         </p>
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-gold/50 to-transparent" />
+        <div className="h-32 w-px bg-gradient-to-b from-transparent via-royal-gold/50 to-transparent" />
       </div>
 
       <style>{`
