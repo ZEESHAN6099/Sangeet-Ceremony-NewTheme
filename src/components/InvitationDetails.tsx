@@ -238,10 +238,31 @@ const InvitationDetails: React.FC = () => {
           {/* Main Phrase */}
           <p ref={phraseRef} className="font-playfair text-xl md:text-2xl text-center text-cream/95 italic leading-relaxed mb-12 px-6 drop-shadow-[0_0_10px_rgba(255,253,208,0.5)]">
             Cordially Invite You to Celebrate the
-            <span className="block font-cinzel text-lg tracking-[0.3em] text-hot-pink mt-5 uppercase text-magical-glow animate-glow-pulse">
-              Sangeet Night
-            </span>
           </p>
+
+          {/* Mayoun Celebration with flowers on corners */}
+          <div className="flex items-center justify-center mb-12">
+            <div className="relative">
+              {/* Corner flowers */}
+              <div className="absolute -left-10 -top-6 animate-sparkle">
+                <Flower color="#FF1493" size={28} />
+              </div>
+              <div className="absolute -right-10 -top-6 animate-sparkle" style={{ animationDelay: '0.2s' }}>
+                <Flower color="#FF8C00" size={28} rotate={90} />
+              </div>
+              <div className="absolute -left-10 -bottom-6 animate-sparkle" style={{ animationDelay: '0.4s' }}>
+                <Flower color="#BEF264" size={28} rotate={180} />
+              </div>
+              <div className="absolute -right-10 -bottom-6 animate-sparkle" style={{ animationDelay: '0.6s' }}>
+                <Flower color="#FFD17A" size={28} rotate={270} />
+              </div>
+
+              {/* Main Text */}
+              <span className="font-cinzel text-2xl md:text-3xl tracking-[0.4em] text-mustard-yellow text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 15px rgba(255,185,15,0.9), 0 0 25px rgba(255,20,147,0.6), 0 0 35px rgba(190,242,100,0.4)' }}>
+                MAYOUN CELEBRATION
+              </span>
+            </div>
+          </div>
 
           {/* Couple Names with heart divider */}
           <div ref={namesRef} className="text-center mb-12">
