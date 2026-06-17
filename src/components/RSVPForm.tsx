@@ -64,8 +64,8 @@ const RSVPForm: React.FC = () => {
         <div className="absolute bottom-16 right-10 h-40 w-40 rounded-full bg-hot-pink/30 blur-[100px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-12 md:pt-16">
-        <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic px-8 pt-8 pb-14 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:px-12 md:pt-12 md:pb-16">
+      <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-10 md:pt-12">
+        <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic px-8 pt-6 pb-10 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:px-12 md:pt-8 md:pb-12">
           <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-mustard-yellow/15 to-transparent blur-3xl" />
           <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-mustard-yellow/10" />
           <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-mustard-yellow/30" />
@@ -73,35 +73,35 @@ const RSVPForm: React.FC = () => {
           <div className="pointer-events-none absolute bottom-8 left-8 h-16 w-16 border-b border-l border-lime-green/30" />
           <div className="pointer-events-none absolute bottom-8 right-8 h-16 w-16 border-b border-r border-lime-green/30" />
 
-          <div className="relative text-center mb-10">
-            <div className="mb-4 flex items-center justify-center gap-4">
+<div className="relative text-center mb-6">
+            <div className="mb-3 flex items-center justify-center gap-4">
               <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
               <div className="h-2 w-2 rotate-45 border border-mustard-yellow/70 animate-sparkle" />
               <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
             </div>
-            <h2 className="mb-2 font-pinyon text-6xl text-mustard-yellow text-magical-glow md:text-7xl">RSVP</h2>
-            <p className="font-cinzel text-[11px] tracking-[0.35em] text-lime-green/80 uppercase">
+            <h2 className="mb-2 font-pinyon text-5xl text-mustard-yellow text-magical-glow md:text-6xl">RSVP</h2>
+            <p className="font-cinzel text-[10px] tracking-[0.35em] text-lime-green/80 uppercase">
               A graceful reply is requested
             </p>
-            <p className="mt-3 font-cinzel text-xs tracking-[0.2em] text-hot-pink/70 uppercase">
-            Kindly reply by June 22nd, 2026
+            <p className="mb-4 font-cinzel text-xs font-semibold tracking-[0.25em] text-[#E68A00] uppercase filter drop-shadow-[0_0_8px_rgba(230,138,0,0.9)] [text-shadow:0_0_12px_rgba(255,165,0,0.8)]">
+              Kindly reply by June 22nd, 2026
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="relative space-y-6">
+          <form onSubmit={handleSubmit} className="relative space-y-4">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2 md:col-span-2">
-                <label className="px-1 font-cinzel text-xs tracking-widest text-mustard-yellow/90 uppercase">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-soft-yellow placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-hot-pink/60 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(255,185,15,0.2)]"
-                  placeholder="Your full name"
-                  value={formData.name}
-                  onChange={(e) => updateField('name', e.target.value)}
-                />
+<label className="px-1 font-cinzel text-xs tracking-widest text-pastel-yellow uppercase">
+                   Full Name
+                 </label>
+                 <input
+                   type="text"
+                   required
+                   className="w-full rounded-2xl border border-mustard-yellow/20 bg-black/20 px-5 py-4 text-lavender placeholder:text-mustard-yellow/30 outline-none transition-all duration-300 font-montserrat focus:border-royal-purple/70 focus:bg-black/30 focus:shadow-[0_0_20px_rgba(120,81,169,0.3)]"
+                   placeholder="Your full name"
+                   value={formData.name}
+                   onChange={(e) => updateField('name', e.target.value)}
+                 />
               </div>
 
               <div className="space-y-2">

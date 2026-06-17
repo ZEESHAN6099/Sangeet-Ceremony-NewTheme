@@ -42,8 +42,8 @@ const GuestBook: React.FC = () => {
         <div className="absolute right-10 top-20 h-36 w-36 rounded-full bg-lime-green/10 blur-[90px]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-12 md:pt-16">
-        <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic p-8 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-12">
+      <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-10 md:pt-12">
+        <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-8">
           <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-mustard-yellow/15 to-transparent blur-3xl" />
           <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-mustard-yellow/10" />
           <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-mustard-yellow/30" />
@@ -53,16 +53,16 @@ const GuestBook: React.FC = () => {
 
           {!isSubmitted ? (
             <>
-              <div className="relative mb-10 text-center">
-                <div className="mb-4 flex items-center justify-center gap-4">
+              <div className="relative mb-6 text-center">
+                <div className="mb-3 flex items-center justify-center gap-4">
                   <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
-                  <Heart className="h-8 w-8 text-hot-pink animate-pulse" />
+                  <Heart className="h-6 w-6 text-hot-pink animate-pulse" />
                   <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
                 </div>
-                <h2 className="font-cinzel text-4xl tracking-[0.25em] text-mustard-yellow text-magical-glow md:text-5xl">
+                <h2 className="font-cinzel text-3xl tracking-[0.25em] text-mustard-yellow text-magical-glow md:text-4xl">
                   WORDS OF LOVE
                 </h2>
-                <p className="mt-3 font-playfair text-xl italic text-lime-green/80">
+                <p className="mt-2 font-playfair text-lg italic text-lime-green/80">
                   Leave a heartfelt note for the couple
                 </p>
               </div>
