@@ -113,7 +113,7 @@
   }
 
   .section-container {
-    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -131,9 +131,17 @@
 /* GSAP ScrollTrigger specific styles */
 .panel {
   width: 100%;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   will-change: transform;
+}
+
+/* On touch devices, background-attachment: fixed can behave poorly and cause layout issues.
+   Use scroll to avoid mobile chrome clipping and improve performance. */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 canvas {
@@ -147,4 +155,51 @@ canvas {
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Mobile: central app-inner scaling to reduce overall layout by ~15% and avoid side gaps */
+@media (max-width: 768px) {
+  .app-inner {
+    transform: scale(0.85);
+    transform-origin: top center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Ensure Tailwind utility `min-h-screen` and `h-screen` use the safe --vh on small devices */
+  .min-h-screen {
+    min-height: calc(var(--vh, 1vh) * 100) !important;
+  }
+
+  .h-screen {
+    height: calc(var(--vh, 1vh) * 100) !important;
+  }
+
+  /* Reduce large paddings on common wrappers to free vertical space */
+  .px-8 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .py-14 { padding-top: 1.25rem !important; padding-bottom: 1.25rem !important; }
+  .p-10 { padding: 1rem !important; }
+
+  /* On small screens, don't vertically center full-screen sections — allow content to flow from top
+     so headings and important content aren't clipped by overflow:hidden. */
+  .section-container {
+    justify-content: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    overflow: visible;
+  }
+
+  /* Specific tweaks for the ArtistPerformance section to avoid bottom clipping */
+  #artist .artist-card-inner {
+    padding: 0.5rem !important;
+  }
+
+  #artist .relative.z-10 {
+    padding-bottom: 0.75rem !important;
+  }
+
+  #artist h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.05 !important;
+  }
 }

@@ -214,10 +214,10 @@ const InvitationDetails: React.FC = () => {
                 <div className="flex flex-col items-center gap-6">
                   <div className="text-center">
                     <p className="font-cinzel text-sm tracking-widest text-mustard-yellow/95 uppercase mb-2">Celebrating</p>
-                    <div className="flex items-end gap-6 justify-center">
-                      <h3 className="font-great-vibes text-6xl md:text-7xl leading-none" style={{display: 'inline-block', background: 'linear-gradient(90deg,#FFD580,#FF8C00)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Aleeza</h3>
-                      <span className="font-playfair text-3xl md:text-4xl text-cream/95 font-semibold">&</span>
-                      <h3 className="font-great-vibes text-6xl md:text-7xl leading-none" style={{display: 'inline-block', background: 'linear-gradient(90deg,#FF8C00,#FF1493)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Ibrahim</h3>
+                    <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 justify-center">
+                      <h3 className="font-great-vibes text-4xl md:text-6xl lg:text-7xl leading-none break-words text-center" style={{background: 'linear-gradient(90deg,#FFD580,#FF8C00)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Aleeza</h3>
+                      <span className="font-playfair text-2xl md:text-3xl text-cream/95 font-semibold text-center mx-0 md:mx-2" style={{lineHeight: '1'}}> &amp; </span>
+                      <h3 className="font-great-vibes text-4xl md:text-6xl lg:text-7xl leading-none break-words text-center" style={{background: 'linear-gradient(90deg,#FF8C00,#FF1493)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent', textShadow: '0 8px 30px rgba(0,0,0,0.55)', zIndex: 20}}>Ibrahim</h3>
                     </div>
                     <div className="mt-3 h-1 w-48 mx-auto rounded-full" style={{background: 'linear-gradient(90deg, rgba(255,185,15,0.9), rgba(255,20,147,0.8))'}} />
                   </div>

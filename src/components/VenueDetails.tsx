@@ -127,10 +127,10 @@ gsap.to(titleRef.current, {
         <div className="absolute inset-0 bg-gradient-to-br from-deep-purple/70 via-hot-pink/40 to-lime-green/35 mix-blend-multiply" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4">
+      <div className="relative z-10 mx-auto flex w-full max-w-3xl md:max-w-5xl flex-col items-center px-4">
         <div
           ref={cardRef}
-          className="relative w-full rounded-[28px] border border-mehndi-orange/50 p-8 shadow-[0_28px_80px_rgba(0,0,0,0.6)] backdrop-blur-2xl md:p-12"
+          className="relative w-full rounded-[28px] border border-mehndi-orange/50 p-6 shadow-[0_28px_80px_rgba(0,0,0,0.6)] backdrop-blur-2xl md:p-12"
           style={{
             background: 'linear-gradient(180deg, rgba(10,8,15,0.65), rgba(20,10,18,0.65))',
             boxShadow: '0 30px 90px rgba(12,8,20,0.6), inset 0 0 60px rgba(255,185,15,0.06)',
@@ -152,21 +152,20 @@ gsap.to(titleRef.current, {
             />
           ))}
 
-          <div className="grid items-center gap-8 md:grid-cols-2">
+          <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="z-10 space-y-8">
               <div className="text-left">
                 <h2
                   ref={titleRef}
-                  className="mb-2 font-cinzel text-4xl tracking-[0.12em] md:text-6xl"
+                  className="mb-2 font-cinzel text-3xl md:text-6xl tracking-normal md:tracking-[0.12em]"
                   style={{
                     color: '#FFD580',
                     textShadow: '0 6px 26px rgba(255,185,15,0.95), 0 0 40px rgba(255,20,147,0.25)',
                     lineHeight: 1
                   }}
                 >
-                  Mayoun Celebration
-                  <br />
-                  <span style={{ color: '#FFB84D' }}>NIGHT</span>
+                  <span className="inline md:block">Mayoun Celebration</span>{' '}
+                  <span className="inline md:block" style={{ color: '#FFB84D' }}>NIGHT</span>
                 </h2>
                 <div className="h-px w-32 bg-gradient-to-r from-mehndi-orange to-transparent opacity-50" />
               </div>
@@ -187,8 +186,8 @@ gsap.to(titleRef.current, {
                   </svg>
                 </div>
 
-                <div>
-                  <p className="font-playfair text-2xl md:text-3xl" style={{ color: '#FFE6B3', textShadow: '0 6px 18px rgba(0,0,0,0.6)' }}>6:30 PM</p>
+                  <div>
+                  <p className="font-playfair text-xl md:text-3xl" style={{ color: '#FFE6B3', textShadow: '0 6px 18px rgba(0,0,0,0.6)' }}>6:30 PM</p>
                   <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-lime-green/70">
                     In the Evening
                   </p>
@@ -199,7 +198,7 @@ gsap.to(titleRef.current, {
                 ref={locationRef}
                 type="button"
                 onClick={openMaps}
-                className="group block w-full rounded-xl border border-royal-gold/20 p-6 text-left transition-all duration-400 hover:border-lime-green/40 hover:scale-[1.01]"
+                className="group block w-full rounded-xl border border-royal-gold/20 p-4 md:p-6 text-left transition-all duration-400 hover:border-lime-green/40 hover:scale-[1.01]"
                 style={{ background: 'linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02))', boxShadow: '0 10px 30px rgba(0,0,0,0.45), 0 0 30px rgba(255,185,15,0.04)'}}
               >
                 <div className="flex gap-4">
@@ -283,11 +282,11 @@ gsap.to(titleRef.current, {
           </div>
         </div>
 
-        <div ref={carRef} className="mt-8 w-full max-w-xl">
+        <div ref={carRef} className="mt-6 w-full max-w-xl">
           <button
             type="button"
             onClick={openMaps}
-            className="group relative mx-auto flex w-full max-w-[30rem] items-center justify-center gap-5 overflow-hidden rounded-full border border-mehndi-orange/40 bg-gradient-to-r from-hot-pink/70 via-mehndi-orange/80 to-lime-green/70 px-8 py-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-500 hover:border-hot-pink/70 hover:shadow-[0_14px_36px_rgba(0,0,0,0.35),_0_0_40px_rgba(255,140,0,0.35)] hover:scale-[1.03]"
+            className="group relative mx-auto flex w-full max-w-[30rem] items-center justify-center gap-5 overflow-hidden rounded-full border border-mehndi-orange/40 bg-gradient-to-r from-hot-pink/70 via-mehndi-orange/80 to-lime-green/70 px-6 py-3 md:px-8 md:py-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all duration-500 hover:border-hot-pink/70 hover:shadow-[0_14px_36px_rgba(0,0,0,0.35),_0_0_40px_rgba(255,140,0,0.35)] hover:scale-[1.03]"
           >
             <div className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
             <div className="pointer-events-none absolute inset-x-8 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-lime-green/30 to-transparent" />

@@ -83,7 +83,7 @@ const Home: React.FC = () => {
       <ParticleBackground />
       <GateScreen />
       
-      <div className={`transition-all duration-1000 ${isGateOpened ? 'blur-0 scale-100 opacity-100' : 'blur-2xl scale-110 opacity-0'}`}>
+      <div className={`app-inner transition-all duration-1000 ${isGateOpened ? 'blur-0 scale-100 opacity-100' : 'blur-2xl scale-110 opacity-0'}`}>
         <RevealHall />
         <InvitationDetails />
         <VenueDetails />
