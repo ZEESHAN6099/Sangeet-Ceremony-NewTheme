@@ -3,7 +3,7 @@ import { IMAGES } from '../utils/images';
 import { Calendar, Sparkles } from 'lucide-react';
 
 const Countdown: React.FC = () => {
-  const targetDate = new Date('July 17, 2026 18:30:00').getTime();
+  const targetDate = new Date('July 10, 2026 18:30:00').getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -46,12 +46,12 @@ const Countdown: React.FC = () => {
     const googleCalendarUrl =
       'https://calendar.google.com/calendar/render?action=TEMPLATE' +
       '&text=' + encodeURIComponent('Aleeza & Ibrahim Sangeet Night') +
-      '&dates=' + encodeURIComponent('20260717T183000/20260717T233000') +
+      '&dates=' + encodeURIComponent('20260710T183000/20260710T233000') +
       '&details=' + encodeURIComponent(
         'A celebration woven with love, family and friends, tradition and timeless memories.'
       ) +
       '&location=' +
-      encodeURIComponent('The Palazzo Ballroom, The Merion, 1301 Route 130 South, Cinnaminson, NJ 08077');
+      encodeURIComponent("Razberry's Wedding Venue, 834 NJ-12, Frenchtown, NJ 08825");
 
     window.open(googleCalendarUrl, '_blank', 'noopener,noreferrer');
   };
@@ -146,7 +146,7 @@ const Countdown: React.FC = () => {
               Aleeza & Ibrahim
             </div>
             <p className="mt-2 px-4 font-cinzel text-[10px] uppercase tracking-[0.22em] text-gold/45 sm:text-[11px] sm:tracking-[0.3em]">
-              July 17, 2026 • The Palazzo Ballroom
+              July 10, 2026 • Razberry's Wedding Venue
             </p>
           </div>
         </div>

@@ -173,7 +173,7 @@ const InvitationDetails: React.FC = () => {
           {/* Date Section */}
           <div ref={dateRef} className="text-center">
             <p className="font-cinzel text-xl md:text-2xl tracking-[0.3em] text-gold">
-              JULY 17, 2026
+              JULY 10, 2026
             </p>
             <p className="font-montserrat text-xs tracking-widest text-gold/50 mt-2 uppercase">
               6:30 in the Evening

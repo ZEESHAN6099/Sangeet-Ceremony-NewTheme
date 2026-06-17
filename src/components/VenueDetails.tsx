@@ -6,7 +6,7 @@ import { IMAGES } from '../utils/images';
 gsap.registerPlugin(ScrollTrigger);
 
 const GOOGLE_MAPS_URL =
-  'https://www.google.com/maps/search/?api=1&query=The+Palazzo+Ballroom+The+Merion+1301+Route+130+South+Cinnaminson+NJ+08077';
+  'https://www.google.com/maps/search/?api=1&query=Razberry\'s+Wedding+Venue+834+NJ-12+Frenchtown+NJ+08825';
 
 const VenueDetails: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -207,13 +207,13 @@ const VenueDetails: React.FC = () => {
 
                   <div>
                     <h3 className="font-cinzel text-lg text-gold-light transition-colors group-hover:text-gold">
-                      THE PALAZZO BALLROOM
+                      RAZBERRY'S WEDDING VENUE
                     </h3>
-                    <p className="font-playfair text-sm italic text-gold/60">The Merion</p>
+                    <p className="font-playfair text-sm italic text-gold/60">Frenchtown, NJ</p>
                     <p className="mt-2 font-montserrat text-xs leading-relaxed text-gold/40">
-                      1301 Route 130 South
+                      834 NJ-12
                       <br />
-                      Cinnaminson, NJ 08077
+                      Frenchtown, NJ 08825
                     </p>
                     <div className="mt-4 flex items-center gap-2 font-cinzel text-[10px] tracking-widest text-gold/30 transition-colors group-hover:text-gold">
                       <svg
@@ -252,13 +252,13 @@ const VenueDetails: React.FC = () => {
               <div className="relative aspect-[4/5] overflow-hidden rounded-t-full border-4 border-gold/20">
                 <img
                   src={IMAGES.VENUE_BG}
-                  alt="The Palazzo Ballroom"
+                  alt="Razberry's Wedding Venue"
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maroon-dark via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-6 left-0 right-0 text-center">
-                  <p className="font-pinyon text-4xl text-gold drop-shadow-lg">The Palazzo</p>
-                  <p className="font-cinzel text-[10px] tracking-[0.4em] text-gold/40">BALLROOM</p>
+                  <p className="font-pinyon text-4xl text-gold drop-shadow-lg">Razberry's</p>
+                  <p className="font-cinzel text-[10px] tracking-[0.4em] text-gold/40">WEDDING VENUE</p>
                 </div>
               </div>
               <div className="pointer-events-none absolute -inset-2 rounded-t-full border border-gold/10" />
