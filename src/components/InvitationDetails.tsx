@@ -207,7 +207,7 @@ const InvitationDetails: React.FC = () => {
           </div>
 
           {/* Hosts Section */}
-          <div ref={hostsRef} className="text-center mb-12">
+          <div ref={hostsRef} className="text-center mb-12 pt-6 md:pt-0">
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
               {hosts.map((host, index) => (
                 <div key={index} className="relative group">
@@ -257,10 +257,15 @@ const InvitationDetails: React.FC = () => {
                 <Flower color="#FFD17A" size={28} rotate={270} />
               </div>
 
-              {/* Main Text */}
-              <span className="font-cinzel text-2xl md:text-3xl tracking-[0.4em] text-mustard-yellow text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 15px rgba(255,185,15,0.9), 0 0 25px rgba(255,20,147,0.6), 0 0 35px rgba(190,242,100,0.4)' }}>
-                MAYOUN CELEBRATION
-              </span>
+              {/* Main Text - split into two lines */}
+              <div className="text-center">
+                <span className="block font-cinzel text-2xl md:text-3xl tracking-[0.4em] text-mustard-yellow text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 15px rgba(255,185,15,0.9), 0 0 25px rgba(255,20,147,0.6), 0 0 35px rgba(190,242,100,0.4)' }}>
+                  MAYOUN
+                </span>
+                <span className="block font-cinzel text-2xl md:text-3xl tracking-[0.4em] text-lime-green text-magical-glow animate-glow-pulse mt-3" style={{ textShadow: '0 0 15px rgba(190,242,100,0.9), 0 0 25px rgba(255,140,0,0.6), 0 0 35px rgba(255,20,147,0.4)' }}>
+                  CELEBRATION
+                </span>
+              </div>
             </div>
           </div>
 
@@ -313,7 +318,7 @@ const InvitationDetails: React.FC = () => {
               <div className="absolute -bottom-1.5 -left-1.5 w-3 h-3 border-b-2 border-l-2 border-lime-green rounded-bl-md" />
               <div className="absolute -bottom-1.5 -right-1.5 w-3 h-3 border-b-2 border-r-2 border-hot-pink rounded-br-md" />
               
-              <p className="font-cinzel text-base md:text-lg tracking-[0.25em] text-hot-pink text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 12px rgba(255,20,147,0.9), 0 0 20px rgba(255,185,15,0.6)' }}>
+              <p className="font-cinzel font-bold text-base md:text-lg tracking-[0.25em] text-hot-pink text-magical-glow animate-glow-pulse" style={{ textShadow: '0 0 12px rgba(255,20,147,0.9), 0 0 20px rgba(255,185,15,0.6)' }}>
                 6:30 PM
               </p>
             </div>
