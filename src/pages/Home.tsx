@@ -77,13 +77,13 @@ const Home: React.FC = () => {
   return (
     <main 
       ref={containerRef}
-      className={`relative min-h-screen bg-mehndi-pink-dark transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-100'}`}
+      className={`relative min-h-screen bg-rose-dark transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-100'}`}
     >
       <AudioControl />
       <ParticleBackground />
       <GateScreen />
       
-      <div className={`app-inner transition-all duration-1000 ${isGateOpened ? 'blur-0 scale-100 opacity-100' : 'blur-2xl scale-110 opacity-0'}`}>
+      <div className={`transition-all duration-1000 ${isGateOpened ? 'blur-0 scale-100 opacity-100' : 'blur-2xl scale-110 opacity-0'}`}>
         <RevealHall />
         <InvitationDetails />
         <VenueDetails />
