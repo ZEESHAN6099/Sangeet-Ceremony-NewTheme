@@ -82,10 +82,9 @@ const RSVPForm: React.FC = () => {
 <h2 className="mb-2 font-['Cinzel_Decorative',serif] font-light text-5xl tracking-[0.2em] text-mustard-yellow md:text-6xl filter drop-shadow-[0_2px_10px_rgba(255,20,147,0.7)]">
   RSVP
 </h2>            <p className="font-cinzel text-[11px] tracking-[0.35em] text-cream/95 uppercase text-magical-glow">
-              A graceful reply is requested
-            </p>
+Your presence will make our celebration even more special!            </p>
             <p className="mb-4 font-cinzel text-sm font-semibold tracking-[0.25em] text-mustard-yellow/95 uppercase filter drop-shadow-[0_0_10px_rgba(230,138,0,0.95)] [text-shadow:0_0_14px_rgba(255,165,0,0.9)]">
-              Kindly reply by June 22nd, 2026
+              Kindly reply by June 28th, 2026
             </p>
           </div>
 
