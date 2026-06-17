@@ -20,8 +20,8 @@ const InvitationDetails: React.FC = () => {
 
   const hosts = [
     { name: "Sana Iqbal", delay: 0 },
-    { name: "Tehseen Shazad", delay: 0.2 },
-    { name: "Siama Raffat", delay: 0.4 }
+    { name: "Tehseen Shahzad", delay: 0.2 },
+    { name: "Saima Raffat", delay: 0.4 }
   ];
 
   useEffect(() => {
