@@ -22,43 +22,54 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (!isGateOpened) return;
 
+    // Configure ScrollTrigger for smoother performance
+    ScrollTrigger.defaults({
+      markers: false,
+    });
+
     const panels = gsap.utils.toArray('.panel');
     
     // Smooth appearance of panels
     panels.forEach((panel: any, i) => {
       gsap.fromTo(panel.children, 
         { 
-          y: 100, 
+          y: 80, 
           opacity: 0 
         }, 
         {
           y: 0,
           opacity: 1,
-          duration: 1.5,
-          ease: 'power3.out',
+          duration: 1.2,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: panel,
-            start: 'top 80%',
-            end: 'top 20%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
+            fastScrollEnd: true,
           }
         }
       );
 
-      // Parallax effect for background images
+      // Parallax effect for background images (more subtle)
       const bg = panel.querySelector('img');
       if (bg) {
         gsap.to(bg, {
-          yPercent: 20,
+          yPercent: 15,
           ease: 'none',
           scrollTrigger: {
             trigger: panel,
             start: 'top bottom',
             end: 'bottom top',
-            scrub: true,
+            scrub: 0.5,
           }
         });
       }
+    });
+
+    // Configure global scroll settings for super smooth scrolling
+    ScrollTrigger.config({
+      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
+      limitCallbacks: true,
     });
 
     return () => {
