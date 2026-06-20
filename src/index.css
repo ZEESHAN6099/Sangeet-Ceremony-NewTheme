@@ -147,7 +147,6 @@
   height: auto;
   min-height: calc(var(--vh, 1vh) * 100);
   position: relative;
-  will-change: transform;
 }
 
 /* Make sure the last panel doesn't force extra full height */

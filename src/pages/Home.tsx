@@ -29,41 +29,26 @@ const Home: React.FC = () => {
 
     const panels = gsap.utils.toArray('.panel');
     
-    // Smooth appearance of panels
+    // OPTIMIZED: Simple panel appearance animations
     panels.forEach((panel: any, i) => {
       gsap.fromTo(panel.children, 
         { 
-          y: 80, 
+          y: 40, 
           opacity: 0 
         }, 
         {
           y: 0,
           opacity: 1,
-          duration: 1.2,
+          duration: 0.8,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: panel,
-            start: 'top 85%',
+            start: 'top 90%',
             toggleActions: 'play none none reverse',
             fastScrollEnd: true,
           }
         }
       );
-
-      // Parallax effect for background images (more subtle)
-      const bg = panel.querySelector('img');
-      if (bg) {
-        gsap.to(bg, {
-          yPercent: 15,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: panel,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 0.5,
-          }
-        });
-      }
     });
 
     // Configure global scroll settings for super smooth scrolling

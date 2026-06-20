@@ -330,7 +330,7 @@ const RevealHall: React.FC = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="font-playfair text-xl md:text-2xl text-cream" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>June 15, 2026</p>
+                  <p className="font-playfair text-xl md:text-2xl text-cream" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>July 10, 2026</p>
                   <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-hot-pink/70">Save the Date</p>
                 </div>
               </div>
