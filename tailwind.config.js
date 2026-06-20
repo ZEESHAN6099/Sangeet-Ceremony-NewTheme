@@ -25,6 +25,20 @@ export default {
       'golden-amber': ({ opacityValue = 1 }) => `rgba(255, 191, 0, ${opacityValue})`,
       'golden-yellow': ({ opacityValue = 1 }) => `rgba(255, 215, 0, ${opacityValue})`,
       
+      // VIBRANT PINKS
+      'hot-pink': ({ opacityValue = 1 }) => `rgba(255, 20, 147, ${opacityValue})`,
+      'deep-pink': ({ opacityValue = 1 }) => `rgba(219, 112, 147, ${opacityValue})`,
+      'mehndi-pink': ({ opacityValue = 1 }) => `rgba(255, 105, 180, ${opacityValue})`,
+      'blush-pink': ({ opacityValue = 1 }) => `rgba(255, 182, 193, ${opacityValue})`,
+      'rose-pink': ({ opacityValue = 1 }) => `rgba(255, 192, 203, ${opacityValue})`,
+      
+      // WARM ORANGES & REDS
+      'vibrant-orange': ({ opacityValue = 1 }) => `rgba(255, 140, 0, ${opacityValue})`,
+      'bright-orange': ({ opacityValue = 1 }) => `rgba(255, 165, 0, ${opacityValue})`,
+      'coral-red': ({ opacityValue = 1 }) => `rgba(255, 127, 80, ${opacityValue})`,
+      'crimson-red': ({ opacityValue = 1 }) => `rgba(220, 20, 60, ${opacityValue})`,
+      'warm-red': ({ opacityValue = 1 }) => `rgba(255, 69, 0, ${opacityValue})`,
+      
       // Neutral warm tones
       'cream': ({ opacityValue = 1 }) => `rgba(255, 253, 208, ${opacityValue})`,
       'ivory': ({ opacityValue = 1 }) => `rgba(255, 255, 240, ${opacityValue})`,

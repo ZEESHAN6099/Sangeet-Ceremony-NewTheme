@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import GateScreen from '../components/GateScreen';
 import RevealHall from '../components/RevealHall';
@@ -9,58 +9,20 @@ import GuestBook from '../components/GuestBook';
 import Countdown from '../components/Countdown';
 import AudioControl from '../components/AudioControl';
 import ParticleBackground from '../components/ParticleBackground';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Home: React.FC = () => {
   const { isGateOpened, isScrollLocked } = useStore();
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!isGateOpened) return;
+  const slides = [
+    { id: 'reveal', component: <RevealHall /> },
+    { id: 'invitation', component: <InvitationDetails /> },
+    { id: 'venue', component: <VenueDetails /> },
+    { id: 'rsvp', component: <RSVPForm /> },
+    { id: 'guestbook', component: <GuestBook /> },
+    { id: 'countdown', component: <Countdown /> },
+  ];
 
-    // Configure ScrollTrigger for smoother performance
-    ScrollTrigger.defaults({
-      markers: false,
-    });
-
-    const panels = gsap.utils.toArray('.panel');
-    
-    // OPTIMIZED: Simple panel appearance animations
-    panels.forEach((panel: any, i) => {
-      gsap.fromTo(panel.children, 
-        { 
-          y: 40, 
-          opacity: 0 
-        }, 
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: panel,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse',
-            fastScrollEnd: true,
-          }
-        }
-      );
-    });
-
-    // Configure global scroll settings for super smooth scrolling
-    ScrollTrigger.config({
-      autoRefreshEvents: "visibilitychange,DOMContentLoaded,load",
-      limitCallbacks: true,
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, [isGateOpened]);
-
+  // Handle scroll locking
   useEffect(() => {
     if (isScrollLocked) {
       document.body.style.overflow = 'hidden';
@@ -69,26 +31,55 @@ const Home: React.FC = () => {
     }
   }, [isScrollLocked]);
 
+  // Enable smooth scrolling
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }, []);
+
   return (
-    <main 
-      ref={containerRef}
-      className={`relative min-h-screen bg-rose-dark transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-100'}`}
-    >
+    <div className="relative bg-rose-dark">
       <AudioControl />
       <ParticleBackground />
       <GateScreen />
-      
-      <div className={`transition-all duration-1000 ${isGateOpened ? 'blur-0 scale-100 opacity-100' : 'blur-2xl scale-110 opacity-0'}`}>
-        <RevealHall />
-        <InvitationDetails />
-        <VenueDetails />
-        <RSVPForm />
-        <GuestBook />
-        <Countdown />
+
+      {/* Main Container with Vertical Scrolling */}
+      <div 
+        className={`transition-opacity duration-1000 ${isGateOpened ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        {slides.map((slide) => (
+          <section
+            key={slide.id}
+            id={slide.id}
+            className="min-h-screen w-full"
+          >
+            {slide.component}
+          </section>
+        ))}
       </div>
 
-      {/* REMOVED: Decorative Sidebar for maximum performance */}
-    </main>
+      {/* Smooth Scrolling Styles */}
+      <style>{`
+        html, body {
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          overflow-x: hidden;
+        }
+        
+        body::-webkit-scrollbar {
+          width: 0;
+          background: transparent;
+        }
+        
+        body::-webkit-scrollbar-thumb {
+          background: transparent;
+        }
+        
+        body {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </div>
   );
 };
 
