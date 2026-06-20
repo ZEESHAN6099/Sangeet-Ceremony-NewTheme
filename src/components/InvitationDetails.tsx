@@ -38,92 +38,36 @@ const InvitationDetails: React.FC = () => {
         { scale: 1.15, opacity: 0.1 },
         { scale: 1, opacity: 0.45, duration: 1.4, ease: 'power2.out' }
       )
-      // Card entrance
       .fromTo(
         cardRef.current,
         { y: 80, scale: 0.9, opacity: 0, rotationX: 10 },
         { y: 0, scale: 1, opacity: 1, rotationX: 0, duration: 1.2, ease: 'power4.out' },
         '-=1'
       )
-      // Corner decorations animate in
-      .fromTo(
-        cornerRefs.current.filter(Boolean),
-        { scale: 0, opacity: 0, rotation: -45 },
-        { scale: 1, opacity: 1, rotation: 0, duration: 0.65, stagger: 0.1, ease: 'back.out(1.7)' },
-        '-=0.45'
-      )
-      // Flowers animate in
-      .fromTo(
-        flowerRefs.current.filter(Boolean),
-        { scale: 0, opacity: 0, y: 50 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'elastic.out(1, 0.5)' },
-        '-=0.3'
-      )
-      // Sparkles animate in
-      .fromTo(
-        sparkleRefs.current.filter(Boolean),
-        { scale: 0, opacity: 0, rotation: -180 },
-        { scale: 1, opacity: 1, rotation: 0, duration: 0.5, stagger: 0.08, ease: 'back.out(1.5)' },
-        '-=0.3'
-      )
-      // Hosts names appear with stagger
       .fromTo(
         hostsRef.current?.children || [],
         { y: -30, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.85, stagger: 0.15, ease: 'power3.out' },
         '-=0.35'
       )
-      // Phrase slides up
       .fromTo(
         phraseRef.current,
         { y: 25, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.85, ease: 'power2.out' },
         '-=0.3'
       )
-      // Main names with glow pulse
       .fromTo(
         namesRef.current,
         { scale: 0.82, opacity: 0 },
         { scale: 1, opacity: 1, duration: 1.05, ease: 'back.out(1.4)' },
         '-=0.4'
       )
-      // Date appears
       .fromTo(
         dateRef.current,
         { y: 35, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out' },
         '-=0.3'
       );
-
-      gsap.to(namesRef.current, {
-        filter: 'drop-shadow(0 0 35px rgba(255, 140, 0, 0.9)) drop-shadow(0 0 50px rgba(255, 20, 147, 0.6)) drop-shadow(0 0 60px rgba(190, 242, 100, 0.4))',
-        duration: 1.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
-      });
-
-      gsap.to(cardRef.current, {
-        y: -10,
-        duration: 3.5,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-        delay: 1.2
-      });
-
-      // Floating flowers animation
-      flowerRefs.current.forEach((flower, i) => {
-        if (!flower) return;
-        gsap.to(flower, {
-          y: -10,
-          duration: 2 + i * 0.2,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: i * 0.1
-        });
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -146,7 +90,7 @@ const InvitationDetails: React.FC = () => {
   );
 
   return (
-    <section ref={sectionRef} id="invitation" className="section-container panel overflow-hidden">
+    <section ref={sectionRef} id="invitation" className="section-container panel overflow-visible">
       <div className="absolute inset-0 z-0">
         <img
           ref={backgroundRef}
