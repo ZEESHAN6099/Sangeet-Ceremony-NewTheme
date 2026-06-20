@@ -89,7 +89,7 @@ const VenueDetails: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} id="venue" className="h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} id="venue" className="min-h-screen flex items-center justify-center py-12 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src={IMAGES.VENUE_BG}
