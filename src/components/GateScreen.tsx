@@ -131,9 +131,8 @@ const GateScreen: React.FC = () => {
           <div className="absolute bottom-4 left-4 h-8 w-8 border-b-2 border-l-2 border-warm-red/40 rounded-bl-lg" />
           <div className="absolute bottom-4 right-4 h-8 w-8 border-b-2 border-r-2 border-mehndi-pink/40 rounded-br-lg" />
 
-          <p className="relative font-cinzel text-[11px] uppercase tracking-[0.5em] text-mehndi-pink/70 drop-shadow-[0_0_8px_rgba(255,105,180,0.4)]">
-            A Royal Invitation Awaits
-          </p>
+          <p className="relative font-cinzel text-[13px] uppercase tracking-[0.5em] text-mehndi-pink/70 drop-shadow-[0_0_8px_rgba(255,105,180,0.4)]">
+Your Presence is Sincerely Requested and Warmly Awaited.          </p>
           <h1 className="relative mt-6 font-pinyon text-7xl text-hot-pink drop-shadow-[0_0_20px_rgba(255,20,147,0.6)] md:text-9xl animate-glow-pulse">
             Aleeza & Ibrahim
           </h1>
