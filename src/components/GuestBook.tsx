@@ -35,34 +35,34 @@ const GuestBook: React.FC = () => {
           alt="Guest Book Background"
           className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-lime-green/50 via-hot-pink/60 to-deep-purple/70" />
-        <div className="absolute inset-x-0 top-0 h-52 bg-gradient-to-b from-mustard-yellow/10 via-soft-yellow/5 to-transparent" />
-        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-mustard-yellow/10 blur-[120px]" />
-        <div className="absolute left-8 bottom-20 h-40 w-40 rounded-full bg-hot-pink/30 blur-[100px]" />
-        <div className="absolute right-10 top-20 h-36 w-36 rounded-full bg-lime-green/10 blur-[90px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(60,40,10,0.7)] via-[rgba(80,50,15,0.6)] to-[rgba(50,30,8,0.7)]" />
+        <div className="absolute inset-x-0 top-0 h-52 bg-gradient-to-b from-royal-gold/10 via-soft-yellow/5 to-transparent" />
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-royal-gold/10 blur-[120px]" />
+        <div className="absolute left-8 bottom-20 h-40 w-40 rounded-full bg-golden-amber/30 blur-[100px]" />
+        <div className="absolute right-10 top-20 h-36 w-36 rounded-full bg-soft-yellow/10 blur-[90px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-10 md:pt-12">
         <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-8">
-          <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-mustard-yellow/15 to-transparent blur-3xl" />
-          <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-mustard-yellow/10" />
-          <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-mustard-yellow/30" />
-          <div className="pointer-events-none absolute right-8 top-8 h-16 w-16 border-r border-t border-mustard-yellow/30" />
-          <div className="pointer-events-none absolute bottom-8 left-8 h-16 w-16 border-b border-l border-lime-green/30" />
-          <div className="pointer-events-none absolute bottom-8 right-8 h-16 w-16 border-b border-r border-lime-green/30" />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-royal-gold/15 to-transparent blur-3xl" />
+          <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-royal-gold/10" />
+          <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-royal-gold/30" />
+          <div className="pointer-events-none absolute right-8 top-8 h-16 w-16 border-r border-t border-royal-gold/30" />
+          <div className="pointer-events-none absolute bottom-8 left-8 h-16 w-16 border-b border-l border-soft-yellow/30" />
+          <div className="pointer-events-none absolute bottom-8 right-8 h-16 w-16 border-b border-r border-soft-yellow/30" />
 
           {!isSubmitted ? (
             <>
               <div className="relative mb-6 text-center">
                 <div className="mb-3 flex items-center justify-center gap-4">
-                  <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
-                  <Heart className="h-6 w-6 text-hot-pink animate-pulse" />
-                  <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
+                  <div className="h-px w-14 bg-gradient-to-r from-transparent to-golden-amber/60" />
+                  <Heart className="h-6 w-6 text-golden-amber animate-pulse" />
+                  <div className="h-px w-14 bg-gradient-to-l from-transparent to-soft-yellow/60" />
                 </div>
                 <h2 className="font-cinzel text-3xl tracking-[0.25em] text-mustard-yellow text-magical-glow md:text-4xl">
                   WORDS OF LOVE
                 </h2>
-                <p className="mt-2 font-playfair text-lg italic text-lime-green/80">
+                <p className="mt-2 font-playfair text-lg italic text-soft-yellow/80">
                   Leave a heartfelt note for the couple
                 </p>
               </div>
@@ -76,7 +76,7 @@ const GuestBook: React.FC = () => {
                     type="text"
                     placeholder="Your full name"
                     required
-                    className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                    className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-golden-amber/28 hover:scale-[1.002] focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
                     value={formData.name}
                     onChange={(e) => updateField('name', e.target.value)}
                   />
@@ -90,14 +90,14 @@ const GuestBook: React.FC = () => {
                     placeholder="Share your blessings, prayers, and beautiful wishes..."
                     required
                     rows={6}
-                    className="appearance-none w-full resize-none rounded-[1.6rem] border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-5 text-cream placeholder:text-cream/100 outline-none transition-all duration-300 font-montserrat leading-relaxed hover:bg-hot-pink/28 focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                    className="appearance-none w-full resize-none rounded-[1.6rem] border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-5 text-cream placeholder:text-cream/100 outline-none transition-all duration-300 font-montserrat leading-relaxed hover:bg-golden-amber/28 focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
                     value={formData.message}
                     onChange={(e) => updateField('message', e.target.value)}
                   />
                 </div>
 
-                <div className="rounded-[1.6rem] border border-lime-green/20 bg-white/5 p-5 text-center glassmorphic-magic">
-                  <p className="font-cinzel text-[11px] tracking-[0.3em] text-lime-green/80 uppercase">
+                <div className="rounded-[1.6rem] border border-soft-yellow/20 bg-white/5 p-5 text-center glassmorphic-magic">
+                  <p className="font-cinzel text-[11px] tracking-[0.3em] text-soft-yellow/80 uppercase">
                     Message Preview
                   </p>
                   <p className="mt-3 font-playfair text-2xl text-mustard-yellow text-magical-glow">
@@ -111,7 +111,7 @@ const GuestBook: React.FC = () => {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="group relative w-full overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-hot-pink via-mustard-yellow to-lime-green px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-hot-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
+                    className="group relative w-full overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-golden-amber via-mustard-yellow to-soft-yellow px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-golden-amber/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
                   >
                     <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
                     <span className="absolute inset-y-0 left-[-20%] w-1/3 rotate-12 bg-white/15 blur-xl transition-all duration-700 group-hover:left-[95%]" />
@@ -125,14 +125,14 @@ const GuestBook: React.FC = () => {
           ) : (
             <div className="relative py-10 text-center">
               <div className="mb-6 flex items-center justify-center gap-4">
-                <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
-                <Sparkles className="h-8 w-8 text-lime-green animate-sparkle" />
-                <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
+                <div className="h-px w-14 bg-gradient-to-r from-transparent to-golden-amber/60" />
+                <Sparkles className="h-8 w-8 text-soft-yellow animate-sparkle" />
+                <div className="h-px w-14 bg-gradient-to-l from-transparent to-soft-yellow/60" />
               </div>
               <h2 className="font-cinzel text-3xl tracking-[0.2em] text-mustard-yellow text-magical-glow md:text-4xl">
                 THANK YOU FOR YOUR BEAUTIFUL WORDS
               </h2>
-              <p className="mx-auto mt-4 max-w-xl font-playfair text-2xl italic text-lime-green/80">
+              <p className="mx-auto mt-4 max-w-xl font-playfair text-2xl italic text-soft-yellow/80">
                 {submittedName ? `${submittedName}, your heartfelt message has become a cherished part of this celebration.` : 'Your heartfelt message has become a cherished part of this celebration.'}
               </p>
             </div>
@@ -143,19 +143,19 @@ const GuestBook: React.FC = () => {
       {showPopup ? (
         <div className="fixed inset-0 z-[220] flex items-center justify-center bg-black/60 px-4 backdrop-blur-md">
           <div className="relative w-full max-w-lg overflow-hidden rounded-[2rem] glassmorphic-magic p-8 shadow-[0_24px_70px_rgba(0,0,0,0.55)] md:p-10">
-            <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-2/3 -translate-x-1/2 bg-gradient-to-b from-mustard-yellow/20 to-transparent blur-3xl" />
-            <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-mustard-yellow/10" />
+            <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-2/3 -translate-x-1/2 bg-gradient-to-b from-royal-gold/20 to-transparent blur-3xl" />
+            <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-royal-gold/10" />
 
             <div className="relative text-center">
               <div className="mb-5 flex items-center justify-center gap-4">
-                <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
-                <Heart className="h-8 w-8 fill-hot-pink/20 text-hot-pink" />
-                <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
+                <div className="h-px w-14 bg-gradient-to-r from-transparent to-golden-amber/60" />
+                <Heart className="h-8 w-8 fill-golden-amber/20 text-golden-amber" />
+                <div className="h-px w-14 bg-gradient-to-l from-transparent to-soft-yellow/60" />
               </div>
               <h3 className="font-cinzel text-2xl tracking-[0.22em] text-mustard-yellow text-magical-glow md:text-3xl">
                 THANK YOU
               </h3>
-              <p className="mt-4 font-playfair text-2xl italic text-lime-green">
+              <p className="mt-4 font-playfair text-2xl italic text-soft-yellow">
                 Thank you for your beautiful words
               </p>
               <p className="mt-4 font-montserrat text-sm leading-relaxed text-cream/80">
@@ -165,7 +165,7 @@ const GuestBook: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClosePopup}
-                className="group relative mt-8 inline-flex overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-hot-pink via-mustard-yellow to-lime-green px-8 py-3 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-hot-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
+                className="group relative mt-8 inline-flex overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-golden-amber via-mustard-yellow to-soft-yellow px-8 py-3 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-golden-amber/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
               >
                 <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
                 <span className="relative font-cinzel text-xs tracking-[0.35em] text-cream uppercase text-magical-glow">

@@ -5,9 +5,9 @@ import React from 'react';
 const ParticleBackground: React.FC = () => {
   return (
     <div 
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[100]"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[5]"
       style={{
-        background: 'radial-gradient(circle at 20% 50%, rgba(255, 140, 0, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 185, 15, 0.03) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 20, 147, 0.02) 0%, transparent 50%)',
+        background: 'radial-gradient(circle at 20% 50%, rgba(255, 185, 15, 0.04) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.04) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(255, 140, 0, 0.03) 0%, transparent 50%)',
       }}
     />
   );

@@ -57,33 +57,35 @@ const RSVPForm: React.FC = () => {
           alt="RSVP Background"
           className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-purple/70 via-hot-pink/60 to-lime-green/50" />
-        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-mustard-yellow/10 via-soft-yellow/5 to-transparent" />
-        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-mustard-yellow/10 blur-[120px]" />
-        <div className="absolute left-10 top-24 h-32 w-32 rounded-full bg-lime-green/10 blur-[90px]" />
-        <div className="absolute bottom-16 right-10 h-40 w-40 rounded-full bg-hot-pink/30 blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(60,40,10,0.7)] via-[rgba(80,50,15,0.6)] to-[rgba(40,25,5,0.5)]" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-royal-gold/10 via-soft-yellow/5 to-transparent" />
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-royal-gold/10 blur-[120px]" />
+        <div className="absolute left-10 top-24 h-32 w-32 rounded-full bg-soft-yellow/10 blur-[90px]" />
+        <div className="absolute bottom-16 right-10 h-40 w-40 rounded-full bg-golden-amber/30 blur-[100px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-3xl px-4 pt-10 md:pt-12">
         <div className="relative overflow-hidden rounded-[2rem] glassmorphic-magic px-8 pt-6 pb-10 shadow-[0_24px_60px_rgba(0,0,0,0.45)] backdrop-blur-xl md:px-12 md:pt-8 md:pb-12">
-          <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-mustard-yellow/15 to-transparent blur-3xl" />
-          <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-mustard-yellow/10" />
-          <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-mustard-yellow/30" />
-          <div className="pointer-events-none absolute right-8 top-8 h-16 w-16 border-r border-t border-mustard-yellow/30" />
-          <div className="pointer-events-none absolute bottom-8 left-8 h-16 w-16 border-b border-l border-lime-green/30" />
-          <div className="pointer-events-none absolute bottom-8 right-8 h-16 w-16 border-b border-r border-lime-green/30" />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-[70%] -translate-x-1/2 bg-gradient-to-b from-royal-gold/15 to-transparent blur-3xl" />
+          <div className="pointer-events-none absolute inset-[10px] rounded-[1.6rem] border border-royal-gold/10" />
+          <div className="pointer-events-none absolute left-8 top-8 h-16 w-16 border-l border-t border-royal-gold/30" />
+          <div className="pointer-events-none absolute right-8 top-8 h-16 w-16 border-r border-t border-royal-gold/30" />
+          <div className="pointer-events-none absolute bottom-8 left-8 h-16 w-16 border-b border-l border-soft-yellow/30" />
+          <div className="pointer-events-none absolute bottom-8 right-8 h-16 w-16 border-b border-r border-soft-yellow/30" />
 
-<div className="relative text-center mb-6">
+          <div className="relative text-center mb-6">
             <div className="mb-3 flex items-center justify-center gap-4">
-              <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
+              <div className="h-px w-14 bg-gradient-to-r from-transparent to-golden-amber/60" />
               <div className="h-2 w-2 rotate-45 border border-mustard-yellow/70 animate-sparkle" />
-              <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
+              <div className="h-px w-14 bg-gradient-to-l from-transparent to-soft-yellow/60" />
             </div>
-<h2 className="mb-2 font-['Cinzel_Decorative',serif] font-light text-5xl tracking-[0.2em] text-mustard-yellow md:text-6xl filter drop-shadow-[0_2px_10px_rgba(255,20,147,0.7)]">
-  RSVP
-</h2>            <p className="font-cinzel text-[11px] tracking-[0.35em] text-cream/95 uppercase text-magical-glow">
-Your presence will make our celebration even more special!            </p>
-            <p className="mb-4 font-cinzel text-sm font-semibold tracking-[0.25em] text-mustard-yellow/95 uppercase filter drop-shadow-[0_0_10px_rgba(230,138,0,0.95)] [text-shadow:0_0_14px_rgba(255,165,0,0.9)]">
+            <h2 className="mb-2 font-['Cinzel_Decorative',serif] font-light text-5xl tracking-[0.2em] text-mustard-yellow md:text-6xl filter drop-shadow-[0_2px_10px_rgba(255,215,0,0.7)]">
+              RSVP
+            </h2>
+            <p className="font-cinzel text-[11px] tracking-[0.35em] text-cream/95 uppercase text-magical-glow">
+              Your presence will make our celebration even more special!
+            </p>
+            <p className="mb-4 font-cinzel text-sm font-semibold tracking-[0.25em] text-mustard-yellow/95 uppercase filter drop-shadow-[0_0_10px_rgba(255,185,15,0.95)] [text-shadow:0_0_14px_rgba(255,215,0,0.9)]">
               Kindly reply by June 28th, 2026
             </p>
           </div>
@@ -91,17 +93,17 @@ Your presence will make our celebration even more special!            </p>
           <form onSubmit={handleSubmit} className="relative space-y-4">
             <div className="grid gap-6 md:grid-cols-2">
               <div className="space-y-2 md:col-span-2">
-            <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
-                   Full Name
-                 </label>
-                 <input
-                   type="text"
-                   required
-                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
-                   placeholder="Your full name"
-                   value={formData.name}
-                   onChange={(e) => updateField('name', e.target.value)}
-                 />
+                <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-golden-amber/28 hover:scale-[1.002] focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
+                  placeholder="Your full name"
+                  value={formData.name}
+                  onChange={(e) => updateField('name', e.target.value)}
+                />
               </div>
 
               <div className="space-y-2">
@@ -111,7 +113,7 @@ Your presence will make our celebration even more special!            </p>
                 <input
                   type="email"
                   required
-                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-golden-amber/28 hover:scale-[1.002] focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) => updateField('email', e.target.value)}
@@ -124,7 +126,7 @@ Your presence will make our celebration even more special!            </p>
                 <input
                   type="tel"
                   required
-                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                  className="appearance-none w-full rounded-2xl border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-golden-amber/28 hover:scale-[1.002] focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
                   placeholder="+1 234 567 890"
                   value={formData.phone}
                   onChange={(e) => updateField('phone', e.target.value)}
@@ -138,38 +140,38 @@ Your presence will make our celebration even more special!            </p>
               </label>
               <select
                 required
-                  className="appearance-none w-full cursor-pointer rounded-2xl border border-mustard-yellow/24 bg-hot-pink/20 px-5 py-4 text-cream outline-none transition-all duration-300 font-montserrat hover:bg-hot-pink/28 hover:scale-[1.002] focus:border-hot-pink/60 focus:bg-hot-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                className="appearance-none w-full cursor-pointer rounded-2xl border border-mustard-yellow/24 bg-golden-amber/20 px-5 py-4 text-cream outline-none transition-all duration-300 font-montserrat hover:bg-golden-amber/28 hover:scale-[1.002] focus:border-golden-amber/60 focus:bg-golden-amber/36 focus:shadow-[0_0_24px_rgba(255,215,0,0.12)]"
                 value={formData.attending}
                 onChange={(e) => updateField('attending', e.target.value)}
               >
-                <option value="" disabled className="bg-deep-purple">
+                <option value="" disabled className="bg-[rgba(60,40,10,0.95)]">
                   Select an option
                 </option>
-                <option value="yes" className="bg-deep-purple">
+                <option value="yes" className="bg-[rgba(60,40,10,0.95)]">
                   Yes, I will be delighted to attend
                 </option>
-                <option value="no" className="bg-deep-purple">
+                <option value="no" className="bg-[rgba(60,40,10,0.95)]">
                   Regretfully, I will not be able to attend
                 </option>
               </select>
             </div>
 
-            <div className="rounded-[1.6rem] border border-lime-green/20 bg-white/5 p-5 text-center glassmorphic-magic">
+            <div className="rounded-[1.6rem] border border-soft-yellow/20 bg-white/5 p-5 text-center glassmorphic-magic">
               <p className="font-cinzel text-sm md:text-base tracking-[0.28em] text-white uppercase font-bold filter drop-shadow-[0_2px_8px_rgba(255,185,15,1)] [text-shadow:0_0_12px_rgba(255,185,15,0.8)]">
-  RSVP Preview
-</p>
-              <p className="mt-3 font-playfair text-2xl md:text-3xl text-hot-pink/95 font-semibold text-magical-glow">{attendanceLabel}</p>
+                RSVP Preview
+              </p>
+              <p className="mt-3 font-playfair text-2xl md:text-3xl text-golden-amber/95 font-semibold text-magical-glow">{attendanceLabel}</p>
               <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
                 On submit, your mail app opens a ready-made RSVP draft addressed to
                 {' '}
-                <span className="text-hot-pink text-magical-glow">Sana Iqbal</span>.
+                <span className="text-golden-amber text-magical-glow">Sana Iqbal</span>.
               </p>
             </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="group relative w-full overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-hot-pink via-mustard-yellow to-lime-green px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-hot-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
+                className="group relative w-full overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-golden-amber via-mustard-yellow to-soft-yellow px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-golden-amber/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985]"
               >
                 <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
                 <span className="absolute inset-y-0 left-[-20%] w-1/3 rotate-12 bg-white/15 blur-xl transition-all duration-700 group-hover:left-[95%]" />
@@ -181,7 +183,7 @@ Your presence will make our celebration even more special!            </p>
 
             {statusMessage ? (
               <p
-                className="text-center font-montserrat text-sm text-lime-green/80"
+                className="text-center font-montserrat text-sm text-soft-yellow/80"
               >
                 {statusMessage}
               </p>

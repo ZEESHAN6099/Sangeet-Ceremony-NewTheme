@@ -8,48 +8,37 @@ export default {
       center: true,
     },
     colors: {
-      // Pink tones
-      'hot-pink': ({ opacityValue = 1 }) => `rgba(255, 20, 147, ${opacityValue})`,
-      'deep-pink': ({ opacityValue = 1 }) => `rgba(255, 20, 147, ${opacityValue})`,
-      'mehndi-pink': ({ opacityValue = 1 }) => `rgba(255, 105, 180, ${opacityValue})`,
-      'mehndi-pink-light': ({ opacityValue = 1 }) => `rgba(255, 182, 193, ${opacityValue})`,
-      'mehndi-pink-dark': ({ opacityValue = 1 }) => `rgba(219, 112, 147, ${opacityValue})`,
-      'blush-pink': ({ opacityValue = 1 }) => `rgba(255, 182, 193, ${opacityValue})`,
+      // GOLD/YELLOW PRIMARY THEME
+      'royal-gold': ({ opacityValue = 1 }) => `rgba(212, 175, 55, ${opacityValue})`,
+      'royal-gold-light': ({ opacityValue = 1 }) => `rgba(230, 195, 80, ${opacityValue})`,
+      'royal-gold-dark': ({ opacityValue = 1 }) => `rgba(180, 140, 40, ${opacityValue})`,
       
-      // Orange tones
-      'mehndi-orange': ({ opacityValue = 1 }) => `rgba(255, 140, 0, ${opacityValue})`,
-      'mehndi-orange-light': ({ opacityValue = 1 }) => `rgba(255, 165, 0, ${opacityValue})`,
-      'mehndi-orange-dark': ({ opacityValue = 1 }) => `rgba(255, 69, 0, ${opacityValue})`,
-      'coral': ({ opacityValue = 1 }) => `rgba(255, 127, 80, ${opacityValue})`,
-      'tangerine': ({ opacityValue = 1 }) => `rgba(242, 140, 40, ${opacityValue})`,
-      
-      // Mustard/Yellow tones
       'mustard-yellow': ({ opacityValue = 1 }) => `rgba(255, 185, 15, ${opacityValue})`,
+      'mustard-yellow-light': ({ opacityValue = 1 }) => `rgba(255, 200, 50, ${opacityValue})`,
+      'mustard-yellow-dark': ({ opacityValue = 1 }) => `rgba(220, 150, 5, ${opacityValue})`,
+      
       'soft-yellow': ({ opacityValue = 1 }) => `rgba(255, 223, 0, ${opacityValue})`,
+      'soft-yellow-light': ({ opacityValue = 1 }) => `rgba(255, 240, 150, ${opacityValue})`,
+      
       'sunset-yellow': ({ opacityValue = 1 }) => `rgba(255, 167, 38, ${opacityValue})`,
       
-      // Green tones
-      'lime-green': ({ opacityValue = 1 }) => `rgba(190, 242, 100, ${opacityValue})`,
-      'soft-green': ({ opacityValue = 1 }) => `rgba(132, 204, 22, ${opacityValue})`,
-      'forest-green': ({ opacityValue = 1 }) => `rgba(64, 124, 41, ${opacityValue})`,
+      'golden-amber': ({ opacityValue = 1 }) => `rgba(255, 191, 0, ${opacityValue})`,
+      'golden-yellow': ({ opacityValue = 1 }) => `rgba(255, 215, 0, ${opacityValue})`,
       
-      // Purple tones
-      'royal-purple': ({ opacityValue = 1 }) => `rgba(120, 81, 169, ${opacityValue})`,
-      'deep-purple': ({ opacityValue = 1 }) => `rgba(75, 0, 130, ${opacityValue})`,
-      'lavender': ({ opacityValue = 1 }) => `rgba(230, 230, 250, ${opacityValue})`,
-      'violet': ({ opacityValue = 1 }) => `rgba(143, 0, 255, ${opacityValue})`,
-      
-      // Neutral white tones
+      // Neutral warm tones
       'cream': ({ opacityValue = 1 }) => `rgba(255, 253, 208, ${opacityValue})`,
       'ivory': ({ opacityValue = 1 }) => `rgba(255, 255, 240, ${opacityValue})`,
-      'off-white': ({ opacityValue = 1 }) => `rgba(250, 240, 230, ${opacityValue})`,
-      'pearl-white': ({ opacityValue = 1 }) => `rgba(240, 240, 240, ${opacityValue})`,
+      'warm-white': ({ opacityValue = 1 }) => `rgba(255, 250, 230, ${opacityValue})`,
       
       // Default Tailwind colors
       transparent: 'transparent',
       current: 'currentColor',
       black: '#000000',
       white: '#ffffff',
+      
+      // Soft accents (minimal use)
+      'soft-pink': ({ opacityValue = 1 }) => `rgba(255, 200, 200, ${opacityValue})`,
+      'soft-orange': ({ opacityValue = 1 }) => `rgba(255, 180, 100, ${opacityValue})`,
     },
     extend: {
       fontFamily: {
@@ -82,10 +71,10 @@ export default {
         },
         glowPulse: {
           '0%, 100%': { 
-            textShadow: '0 0 15px rgba(255, 185, 15, 0.6), 0 0 30px rgba(255, 105, 180, 0.4)' 
+            textShadow: '0 0 15px rgba(212, 175, 55, 0.6), 0 0 30px rgba(255, 185, 15, 0.4)' 
           },
           '50%': { 
-            textShadow: '0 0 25px rgba(255, 185, 15, 0.9), 0 0 45px rgba(255, 105, 180, 0.7), 0 0 60px rgba(190, 242, 100, 0.5)' 
+            textShadow: '0 0 25px rgba(212, 175, 55, 0.9), 0 0 45px rgba(255, 215, 0, 0.7), 0 0 60px rgba(255, 223, 0, 0.5)' 
           },
         },
         float: {

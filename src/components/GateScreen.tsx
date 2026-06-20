@@ -72,29 +72,18 @@ const GateScreen: React.FC = () => {
         contentRef.current,
         {
           opacity: 0,
-          scale: 1.12,
-          filter: 'blur(10px)',
-          duration: 0.95,
-          ease: 'power2.inOut',
-        },
-        '-=0.35'
-      )
-      .to(
-        screenRef.current,
-        {
-          opacity: 0,
           yPercent: -8,
           duration: 1.05,
           ease: 'power3.inOut',
         },
-        '-=0.2'
+        '-=0.35'
       );
   };
 
   return (
     <div
       ref={screenRef}
-      className={`fixed inset-0 z-[200] overflow-hidden ${isGateOpened ? 'pointer-events-none' : ''}`}
+      className={`fixed inset-0 z-[200] overflow-hidden transition-opacity duration-1000 ${isGateOpened ? 'pointer-events-none opacity-0' : 'opacity-100'}`}
     >
       <div className="absolute inset-0">
         <img
@@ -102,10 +91,10 @@ const GateScreen: React.FC = () => {
           alt="Royal entrance"
           className="h-full w-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,20,147,0.18),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep-purple/60 via-mehndi-pink-dark/50 to-ruby-red/70" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-royal-gold/15 via-lavender/10 to-transparent" />
-        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-gradient-to-r from-hot-pink/20 via-royal-gold/25 to-mehndi-orange/20 blur-[160px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,185,15,0.2),_transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(60,40,10,0.6)] via-[rgba(80,50,15,0.5)] to-[rgba(40,25,5,0.7)]" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-royal-gold/15 via-soft-yellow-light/10 to-transparent" />
+        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-gradient-to-r from-golden-amber/20 via-royal-gold/25 to-mustard-yellow/20 blur-[160px]" />
       </div>
 
       {/* Decorative borders */}
@@ -117,7 +106,7 @@ const GateScreen: React.FC = () => {
 
       {/* Static sparkles (MAX PERFORMANCE - no animations) */}
       {[...Array(5)].map((_, index) => {
-        const colors = ['hot-pink', 'royal-gold', 'mehndi-orange', 'lime-green', 'light-pink'];
+        const colors = ['royal-gold', 'mustard-yellow', 'golden-yellow', 'sunset-yellow', 'cream'];
         return (
           <div
             key={index}
@@ -131,7 +120,7 @@ const GateScreen: React.FC = () => {
       })}
 
       <div ref={contentRef} className="absolute inset-0 z-10 flex items-center justify-center px-6">
-        <div className="relative w-full max-w-3xl overflow-hidden rounded-[2.5rem] border-2 border-royal-gold/30 bg-gradient-to-b from-deep-purple/40 via-hot-pink/25 to-ruby-red/45 px-8 py-14 text-center shadow-[0_35px_90px_rgba(212,175,55,0.35)] backdrop-blur-2xl md:px-16 md:py-18">
+        <div className="relative w-full max-w-3xl overflow-hidden rounded-[2.5rem] border-2 border-royal-gold/30 bg-gradient-to-b from-[rgba(60,40,10,0.4)] via-[rgba(80,50,15,0.25)] to-[rgba(40,25,5,0.45)] px-8 py-14 text-center shadow-[0_35px_90px_rgba(212,175,55,0.35)] backdrop-blur-2xl md:px-16 md:py-18">
           {/* Inner decorative border */}
           <div className="pointer-events-none absolute inset-[12px] rounded-[2rem] border border-royal-gold/15" />
           
@@ -147,14 +136,14 @@ const GateScreen: React.FC = () => {
           <h1 className="relative mt-6 font-pinyon text-7xl text-royal-gold drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] md:text-9xl animate-glow-pulse">
             Aleeza & Ibrahim
           </h1>
-          <p className="relative mx-auto mt-6 max-w-2xl font-cinzel text-sm uppercase tracking-[0.35em] text-royal-gold-light/80 md:text-[15px]">
+          <p className="relative mx-auto mt-6 max-w-2xl font-cinzel text-sm uppercase tracking-[0.35em] text-soft-yellow-light/80 md:text-[15px]">
             One sacred unlock begins an evening of music, love, family and timeless celebration
           </p>
 
           {/* Lock with static glow */}
           <div className="relative mx-auto mt-12 flex h-56 w-56 items-center justify-center md:h-64 md:w-64">
             <div
-              className="absolute h-36 w-36 rounded-full bg-gradient-to-r from-hot-pink/30 via-royal-gold/35 to-mehndi-orange/30 opacity-80 blur-[50px] md:h-44 md:w-44"
+              className="absolute h-36 w-36 rounded-full bg-gradient-to-r from-golden-amber/30 via-royal-gold/35 to-sunset-yellow/30 opacity-80 blur-[50px] md:h-44 md:w-44"
             />
 
             <div
@@ -163,7 +152,7 @@ const GateScreen: React.FC = () => {
             />
             <div
               ref={lockBodyRef}
-              className="relative mt-10 flex h-32 w-36 items-center justify-center rounded-[2.2rem] border-2 border-royal-gold/50 bg-gradient-to-b from-burgundy/85 via-deep-pink/80 to-ruby-red/90 shadow-[0_25px_60px_rgba(0,0,0,0.5),_0_0_40px_rgba(255,20,147,0.3)] md:h-36 md:w-40"
+              className="relative mt-10 flex h-32 w-36 items-center justify-center rounded-[2.2rem] border-2 border-royal-gold/50 bg-gradient-to-b from-[rgba(80,50,15,0.85)] via-[rgba(100,60,20,0.8)] to-[rgba(60,35,10,0.9)] shadow-[0_25px_60px_rgba(0,0,0,0.5),_0_0_40px_rgba(212,175,55,0.3)] md:h-36 md:w-40"
             >
               <div className="absolute inset-[10px] rounded-[1.8rem] border border-royal-gold/20" />
               <div className="absolute top-5 h-px w-14 bg-gradient-to-r from-transparent via-royal-gold/60 to-transparent" />
@@ -179,7 +168,7 @@ const GateScreen: React.FC = () => {
             <button
               onClick={handleEnter}
               disabled={isUnlocking}
-              className="group relative overflow-hidden rounded-full border-2 border-royal-gold/50 bg-gradient-to-r from-hot-pink via-royal-purple/80 to-mehndi-orange px-12 py-5 shadow-[0_20px_50px_rgba(255,20,147,0.4),_0_0_30px_rgba(212,175,55,0.3)] transition-all duration-300 hover:border-royal-gold/80 hover:scale-105 hover:shadow-[0_25px_60px_rgba(255,20,147,0.6),_0_0_50px_rgba(212,175,55,0.5)] active:scale-[0.98] disabled:cursor-wait disabled:opacity-90"
+              className="group relative overflow-hidden rounded-full border-2 border-royal-gold/50 bg-gradient-to-r from-golden-amber via-royal-gold/80 to-mustard-yellow px-12 py-5 shadow-[0_20px_50px_rgba(212,175,55,0.4),_0_0_30px_rgba(255,185,15,0.3)] transition-all duration-300 hover:border-royal-gold/80 hover:scale-105 hover:shadow-[0_25px_60px_rgba(212,175,55,0.6),_0_0_50px_rgba(255,215,0,0.5)] active:scale-[0.98] disabled:cursor-wait disabled:opacity-90"
             >
               <span className="pointer-events-none absolute inset-[2px] rounded-full border border-royal-gold/20" />
               <span className="absolute inset-y-0 left-[-30%] w-2/5 rotate-12 bg-gradient-to-r from-transparent via-cream/30 to-transparent blur-xl transition-all duration-800 group-hover:left-[110%]" />

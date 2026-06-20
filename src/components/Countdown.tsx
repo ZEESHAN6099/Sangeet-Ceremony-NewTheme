@@ -64,17 +64,17 @@ const Countdown: React.FC = () => {
           alt="Countdown Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-purple via-hot-pink/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(60,40,10,0.8)] via-[rgba(80,50,15,0.4)] to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,185,15,0.16),_transparent_34%)]" />
-        <div className="absolute left-1/2 top-8 h-56 w-56 -translate-x-1/2 rounded-full bg-mustard-yellow/10 blur-[120px]" />
-        <div className="absolute bottom-12 left-10 h-32 w-32 rounded-full bg-hot-pink/35 blur-[90px]" />
-        <div className="absolute right-10 top-20 h-36 w-36 rounded-full bg-lime-green/10 blur-[100px]" />
+        <div className="absolute left-1/2 top-8 h-56 w-56 -translate-x-1/2 rounded-full bg-royal-gold/10 blur-[120px]" />
+        <div className="absolute bottom-12 left-10 h-32 w-32 rounded-full bg-golden-amber/35 blur-[90px]" />
+        <div className="absolute right-10 top-20 h-36 w-36 rounded-full bg-soft-yellow/10 blur-[100px]" />
       </div>
 
       {[...Array(10)].map((_, index) => (
         <div
           key={index}
-          className="pointer-events-none absolute h-1.5 w-1.5 rounded-full bg-lime-green/70 animate-sparkle"
+          className="pointer-events-none absolute h-1.5 w-1.5 rounded-full bg-soft-yellow/70 animate-sparkle"
           style={{
             left: `${8 + ((index * 9) % 84)}%`,
             top: `${10 + ((index * 11) % 74)}%`,
@@ -85,17 +85,17 @@ const Countdown: React.FC = () => {
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 text-center">
         <div className="mx-auto max-w-5xl rounded-[2rem] glassmorphic-magic px-6 py-12 shadow-[0_28px_70px_rgba(0,0,0,0.35)] backdrop-blur-md md:px-12 md:py-16">
-          <div className="pointer-events-none absolute inset-x-16 top-0 h-32 bg-gradient-to-b from-mustard-yellow/10 to-transparent blur-3xl" />
-          <div className="pointer-events-none absolute inset-[12px] rounded-[1.6rem] border border-mustard-yellow/10" />
+          <div className="pointer-events-none absolute inset-x-16 top-0 h-32 bg-gradient-to-b from-royal-gold/10 to-transparent blur-3xl" />
+          <div className="pointer-events-none absolute inset-[12px] rounded-[1.6rem] border border-royal-gold/10" />
 
           <div className="relative mb-12">
             <div className="mb-5 flex items-center justify-center gap-4">
-              <div className="h-px w-14 bg-gradient-to-r from-transparent to-hot-pink/60" />
-              <Sparkles className="h-7 w-7 text-lime-green" />
-              <div className="h-px w-14 bg-gradient-to-l from-transparent to-lime-green/60" />
+              <div className="h-px w-14 bg-gradient-to-r from-transparent to-golden-amber/60" />
+              <Sparkles className="h-7 w-7 text-soft-yellow" />
+              <div className="h-px w-14 bg-gradient-to-l from-transparent to-soft-yellow/60" />
             </div>
 
-            <p className="font-cinzel text-[11px] uppercase tracking-[0.45em] text-lime-green/70">
+            <p className="font-cinzel text-[11px] uppercase tracking-[0.45em] text-soft-yellow/70">
               Save The Evening
             </p>
             <h2 className="mt-5 font-cinzel text-2xl leading-tight text-mustard-yellow text-magical-glow sm:text-3xl md:text-5xl md:tracking-[0.2em]">
@@ -112,14 +112,14 @@ const Countdown: React.FC = () => {
             {countdownItems.map((item, idx) => (
               <div
                 key={idx}
-                className="group relative overflow-hidden rounded-[1.75rem] border border-mustard-yellow/20 bg-gradient-to-b from-hot-pink/30 to-black/20 p-5 shadow-[0_14px_35px_rgba(0,0,0,0.28),_0_0_20px_rgba(255,185,15,0.2)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35),_0_0_40px_rgba(255,185,15,0.35)] sm:p-6 md:p-8"
+                className="group relative overflow-hidden rounded-[1.75rem] border border-mustard-yellow/20 bg-gradient-to-b from-golden-amber/30 to-black/20 p-5 shadow-[0_14px_35px_rgba(0,0,0,0.28),_0_0_20px_rgba(255,185,15,0.2)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35),_0_0_40px_rgba(255,185,15,0.35)] sm:p-6 md:p-8"
               >
                 <div className="pointer-events-none absolute inset-[1px] rounded-[1.65rem] border border-mustard-yellow/10" />
                 <div className="pointer-events-none absolute left-1/2 top-3 h-10 w-20 -translate-x-1/2 bg-mustard-yellow/10 blur-2xl" />
                 <span className="relative mb-2 block font-playfair text-3xl text-mustard-yellow text-magical-glow sm:text-4xl md:text-6xl">
                   {String(item.value).padStart(2, '0')}
                 </span>
-                <span className="relative font-cinzel text-[10px] uppercase tracking-[0.22em] text-lime-green/70 sm:text-[11px] md:text-xs md:tracking-[0.28em]">
+                <span className="relative font-cinzel text-[10px] uppercase tracking-[0.22em] text-soft-yellow/70 sm:text-[11px] md:text-xs md:tracking-[0.28em]">
                   {item.label}
                 </span>
               </div>
@@ -129,7 +129,7 @@ const Countdown: React.FC = () => {
           <div className="pt-10">
             <button
               onClick={handleSaveDate}
-              className="group relative mx-auto inline-flex max-w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-hot-pink via-mustard-yellow to-lime-green px-6 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-hot-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985] sm:gap-3 sm:px-10"
+              className="group relative mx-auto inline-flex max-w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-mustard-yellow/40 bg-gradient-to-r from-golden-amber via-mustard-yellow to-soft-yellow px-6 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,185,15,0.25)] transition-all duration-300 hover:border-golden-amber/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,185,15,0.4)] active:scale-[0.985] sm:gap-3 sm:px-10"
             >
               <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
               <span className="absolute inset-y-0 left-[-20%] w-1/3 rotate-12 bg-white/15 blur-xl transition-all duration-700 group-hover:left-[100%]" />
@@ -141,11 +141,11 @@ const Countdown: React.FC = () => {
           </div>
 
           <div className="pt-10">
-            <div className="mx-auto h-px w-40 bg-gradient-to-r from-transparent via-hot-pink/40 to-transparent" />
+            <div className="mx-auto h-px w-40 bg-gradient-to-r from-transparent via-golden-amber/40 to-transparent" />
             <div className="pt-6 font-pinyon text-4xl text-cream/60 md:text-5xl">
               Aleeza & Ibrahim
             </div>
-            <p className="mt-2 px-4 font-cinzel text-[10px] uppercase tracking-[0.22em] text-lime-green/60 sm:text-[11px] sm:tracking-[0.3em]">
+            <p className="mt-2 px-4 font-cinzel text-[10px] uppercase tracking-[0.22em] text-soft-yellow/60 sm:text-[11px] sm:tracking-[0.3em]">
               July 10, 2026 • Razberry's Wedding Venue
             </p>
           </div>
