@@ -20,7 +20,7 @@ const AudioControl: React.FC = () => {
 
   // Render only the hidden audio element (no controls or icons)
   return (
-    <audio ref={audioRef} loop src="/ishq_sufiyana_female.mp3" aria-hidden="true" className="hidden" />
+    <audio ref={audioRef} loop src="/hum_tumhare.mp3" aria-hidden="true" className="hidden" />
   );
 };
 
