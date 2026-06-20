@@ -4,7 +4,6 @@ import GateScreen from '../components/GateScreen';
 import RevealHall from '../components/RevealHall';
 import InvitationDetails from '../components/InvitationDetails';
 import VenueDetails from '../components/VenueDetails';
-import ArtistPerformance from '../components/ArtistPerformance';
 import RSVPForm from '../components/RSVPForm';
 import GuestBook from '../components/GuestBook';
 import Countdown from '../components/Countdown';
@@ -83,28 +82,12 @@ const Home: React.FC = () => {
         <RevealHall />
         <InvitationDetails />
         <VenueDetails />
-        <ArtistPerformance />
         <RSVPForm />
         <GuestBook />
         <Countdown />
       </div>
 
-      {/* Decorative Sidebar (Optional) */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-[150] hidden lg:flex flex-col gap-8">
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-royal-gold/50 to-transparent" />
-        <p className="font-cinzel text-[10px] tracking-[0.5em] text-royal-gold/40 vertical-text uppercase">
-          Aleeza & Ibrahim
-        </p>
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-royal-gold/50 to-transparent" />
-      </div>
-
-      <style>{`
-        .vertical-text {
-          writing-mode: vertical-rl;
-          text-orientation: mixed;
-          transform: rotate(180deg);
-        }
-      `}</style>
+      {/* REMOVED: Decorative Sidebar for maximum performance */}
     </main>
   );
 };

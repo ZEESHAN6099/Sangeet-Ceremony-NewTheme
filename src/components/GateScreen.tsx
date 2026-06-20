@@ -10,12 +10,6 @@ const GateScreen: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   const lockBodyRef = useRef<HTMLDivElement>(null);
   const shackleRef = useRef<HTMLDivElement>(null);
-  const glowRef = useRef<HTMLDivElement>(null);
-  const sparkleRingRef = useRef<HTMLDivElement>(null);
-  const sparkRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  // Create more sparkles!
-  const allSparkColors = ['hot-pink', 'mehndi-orange', 'royal-gold', 'mehndi-pink', 'lavender', 'cream'];
 
   useEffect(() => {
     if (isGateOpened) return;
@@ -39,52 +33,7 @@ const GateScreen: React.FC = () => {
         { y: -18, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
         '-=0.6'
-      )
-      .fromTo(
-        sparkleRingRef.current,
-        { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.2, ease: 'back.out(1.5)' },
-        '-=0.5'
       );
-
-    gsap.to(lockBodyRef.current, {
-      y: -10,
-      duration: 2.8,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-    });
-
-    gsap.to(glowRef.current, {
-      scale: 1.3,
-      opacity: 0.9,
-      duration: 2.2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
-    });
-
-    gsap.to(sparkleRingRef.current, {
-      rotation: 360,
-      duration: 20,
-      repeat: -1,
-      ease: 'none',
-    });
-
-    sparkRefs.current.forEach((spark, index) => {
-      if (!spark) return;
-
-      gsap.to(spark, {
-        y: -40 - (index % 4) * 12,
-        x: (index % 2 === 0 ? 12 : -12) + Math.sin(index) * 6,
-        opacity: 0,
-        scale: 2.2,
-        duration: 2.5 + (index % 5) * 0.3,
-        repeat: -1,
-        delay: index * 0.12,
-        ease: 'sine.inOut',
-      });
-    });
 
     return () => {
       intro.kill();
@@ -118,16 +67,6 @@ const GateScreen: React.FC = () => {
           ease: 'back.out(1.8)',
         },
         '-=0.05'
-      )
-      .to(
-        glowRef.current,
-        {
-          scale: 5,
-          opacity: 1,
-          duration: 0.9,
-          ease: 'power2.out',
-        },
-        '-=0.35'
       )
       .to(
         contentRef.current,
@@ -176,19 +115,16 @@ const GateScreen: React.FC = () => {
       <div className="pointer-events-none absolute bottom-6 left-6 h-24 w-24 border-b-2 border-l-2 border-royal-gold/30 rounded-bl-[2.5rem] md:bottom-10 md:left-10" />
       <div className="pointer-events-none absolute bottom-6 right-6 h-24 w-24 border-b-2 border-r-2 border-royal-gold/30 rounded-br-[2.5rem] md:bottom-10 md:right-10" />
 
-      {/* Floating magic sparkles */}
-      {[...Array(20)].map((_, index) => {
-        const randomColor = allSparkColors[index % allSparkColors.length];
+      {/* Static sparkles (MAX PERFORMANCE - no animations) */}
+      {[...Array(5)].map((_, index) => {
+        const colors = ['hot-pink', 'royal-gold', 'mehndi-orange', 'lime-green', 'light-pink'];
         return (
           <div
             key={index}
-            ref={(el) => {
-              sparkRefs.current[index] = el;
-            }}
-            className={`pointer-events-none absolute h-2 w-2 rounded-full bg-${randomColor} shadow-[0_0_12px_${randomColor},_0_0_24px_${randomColor}]`}
+            className={`pointer-events-none absolute h-2 w-2 rounded-full bg-${colors[index % colors.length]} shadow-[0_0_10px_rgba(212,175,55,0.5)]`}
             style={{
-              left: `${8 + ((index * 5) % 84)}%`,
-              top: `${15 + ((index * 9) % 70)}%`,
+              left: `${10 + index * 20}%`,
+              top: `${20 + index * 15}%`,
             }}
           />
         );
@@ -215,35 +151,11 @@ const GateScreen: React.FC = () => {
             One sacred unlock begins an evening of music, love, family and timeless celebration
           </p>
 
-          {/* Lock with magical sparkle ring */}
+          {/* Lock with static glow */}
           <div className="relative mx-auto mt-12 flex h-56 w-56 items-center justify-center md:h-64 md:w-64">
             <div
-              ref={glowRef}
               className="absolute h-36 w-36 rounded-full bg-gradient-to-r from-hot-pink/30 via-royal-gold/35 to-mehndi-orange/30 opacity-80 blur-[50px] md:h-44 md:w-44"
             />
-            
-            {/* Sparkle ring */}
-            <div
-              ref={sparkleRingRef}
-              className="absolute h-52 w-52 md:h-60 md:w-60"
-            >
-              {[...Array(12)].map((_, i) => {
-                const angle = (i / 12) * 360;
-                const x = Math.cos((angle * Math.PI) / 180) * 100;
-                const y = Math.sin((angle * Math.PI) / 180) * 100;
-                return (
-                  <div
-                    key={i}
-                    className="absolute h-3 w-3 rounded-full bg-royal-gold shadow-[0_0_10px_rgba(212,175,55,0.8),_0_0_20px_rgba(212,175,55,0.5)]"
-                    style={{
-                      left: `calc(50% + ${x}px)`,
-                      top: `calc(50% + ${y}px)`,
-                      transform: 'translate(-50%, -50%)',
-                    }}
-                  />
-                );
-              })}
-            </div>
 
             <div
               ref={shackleRef}
