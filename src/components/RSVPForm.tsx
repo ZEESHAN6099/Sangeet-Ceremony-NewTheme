@@ -7,9 +7,9 @@ const RSVPForm: React.FC = () => {
     email: '',
     phone: '',
     attending: '',
+    guests: '1',
   });
-  const [sendState, setSendState] = useState<'idle' | 'success'>('idle');
-  const [statusMessage, setStatusMessage] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const attendanceLabel = useMemo(() => {
     if (formData.attending === 'yes') return 'Joyfully attending';
@@ -19,10 +19,6 @@ const RSVPForm: React.FC = () => {
 
   const updateField = (field: keyof typeof formData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (sendState !== 'idle' || statusMessage) {
-      setSendState('idle');
-      setStatusMessage('');
-    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -37,6 +33,7 @@ const RSVPForm: React.FC = () => {
       `Guest Name: ${formData.name}`,
       `Guest Email: ${formData.email}`,
       `Guest Phone: ${formData.phone}`,
+      `Number of Members Attending: ${formData.guests}`,
       `Attendance Status: ${attendanceLabel}`,
       '',
       'Warm regards,',
@@ -45,8 +42,7 @@ const RSVPForm: React.FC = () => {
 
     const mailtoUrl = `mailto:Sanashah13@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
-    setSendState('success');
-    setStatusMessage('Your email draft is ready with full name, email, phone number, and attendance details.');
+    setIsSubmitted(true);
   };
 
   return (
@@ -90,105 +86,140 @@ const RSVPForm: React.FC = () => {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="relative space-y-4">
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-2 md:col-span-2">
-                <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
-                  placeholder="Your full name"
-                  value={formData.name}
-                  onChange={(e) => updateField('name', e.target.value)}
-                />
+          {!isSubmitted ? (
+            <form onSubmit={handleSubmit} className="relative space-y-4">
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-2 md:col-span-2">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                    placeholder="Your full name"
+                    value={formData.name}
+                    onChange={(e) => updateField('name', e.target.value)}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                    placeholder="your@email.com"
+                    value={formData.email}
+                    onChange={(e) => updateField('email', e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                    placeholder="+1 234 567 890"
+                    value={formData.phone}
+                    onChange={(e) => updateField('phone', e.target.value)}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
+                    Number of Members Attending
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      min="1"
+                      required
+                      className="w-full appearance-none rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 pr-12 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                      placeholder="1"
+                      value={formData.guests}
+                      onChange={(e) => updateField('guests', e.target.value)}
+                    />
+                    {/* Hide default spin buttons */}
+                    <style>{`
+                      input[type="number"]::-webkit-outer-spin-button,
+                      input[type="number"]::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                      }
+                      input[type="number"] {
+                        -moz-appearance: textfield;
+                      }
+                    `}</style>
+                  </div>
+                </div>
               </div>
 
               <div className="space-y-2">
                 <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
-                  Email Address
+                  Will you be attending?
                 </label>
-                <input
-                  type="email"
+                <select
                   required
-                  className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={(e) => updateField('email', e.target.value)}
-                />
+                  className="appearance-none w-full cursor-pointer rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
+                  value={formData.attending}
+                  onChange={(e) => updateField('attending', e.target.value)}
+                >
+                  <option value="" disabled className="bg-[rgba(60,40,10,0.95)]">
+                    Select an option
+                  </option>
+                  <option value="yes" className="bg-[rgba(60,40,10,0.95)]">
+                    Yes, I will be delighted to attend
+                  </option>
+                  <option value="no" className="bg-[rgba(60,40,10,0.95)]">
+                    Regretfully, I will not be able to attend
+                  </option>
+                </select>
               </div>
-              <div className="space-y-2">
-                <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  required
-                  className="appearance-none w-full rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream placeholder:text-cream/100 placeholder:opacity-100 outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
-                  placeholder="+1 234 567 890"
-                  value={formData.phone}
-                  onChange={(e) => updateField('phone', e.target.value)}
-                />
+
+              <div className="rounded-[1.6rem] border border-mehndi-pink/20 bg-white/5 p-5 text-center glassmorphic-magic">
+                <p className="font-cinzel text-sm md:text-base tracking-[0.28em] text-white uppercase font-bold filter drop-shadow-[0_2px_8px_rgba(255,105,180,1)] [text-shadow:0_0_12px_rgba(255,105,180,0.8)]">
+                  RSVP Preview
+                </p>
+                <p className="mt-3 font-playfair text-2xl md:text-3xl text-vibrant-orange/95 font-semibold text-magical-glow">{attendanceLabel}</p>
+                <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
+                  On submit, your mail app opens a ready-made RSVP draft addressed to
+                  {' '}
+                  <span className="text-mehndi-pink text-magical-glow">Sana Iqbal</span>.
+                </p>
               </div>
-            </div>
 
-            <div className="space-y-2">
-              <label className="px-1 font-cinzel text-xs tracking-widest text-cream/90 uppercase">
-                Will you be attending?
-              </label>
-              <select
-                required
-                className="appearance-none w-full cursor-pointer rounded-2xl border border-hot-pink/24 bg-mehndi-pink/20 px-5 py-4 text-cream outline-none transition-all duration-300 font-montserrat hover:bg-mehndi-pink/28 hover:scale-[1.002] focus:border-mehndi-pink/60 focus:bg-mehndi-pink/36 focus:shadow-[0_0_24px_rgba(255,105,180,0.12)]"
-                value={formData.attending}
-                onChange={(e) => updateField('attending', e.target.value)}
-              >
-                <option value="" disabled className="bg-[rgba(60,40,10,0.95)]">
-                  Select an option
-                </option>
-                <option value="yes" className="bg-[rgba(60,40,10,0.95)]">
-                  Yes, I will be delighted to attend
-                </option>
-                <option value="no" className="bg-[rgba(60,40,10,0.95)]">
-                  Regretfully, I will not be able to attend
-                </option>
-              </select>
-            </div>
-
-            <div className="rounded-[1.6rem] border border-mehndi-pink/20 bg-white/5 p-5 text-center glassmorphic-magic">
-              <p className="font-cinzel text-sm md:text-base tracking-[0.28em] text-white uppercase font-bold filter drop-shadow-[0_2px_8px_rgba(255,105,180,1)] [text-shadow:0_0_12px_rgba(255,105,180,0.8)]">
-                RSVP Preview
-              </p>
-              <p className="mt-3 font-playfair text-2xl md:text-3xl text-vibrant-orange/95 font-semibold text-magical-glow">{attendanceLabel}</p>
-              <p className="mt-2 font-montserrat text-sm leading-relaxed text-cream/100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]">
-                On submit, your mail app opens a ready-made RSVP draft addressed to
-                {' '}
-                <span className="text-mehndi-pink text-magical-glow">Sana Iqbal</span>.
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="group relative w-full overflow-hidden rounded-full border border-hot-pink/40 bg-gradient-to-r from-hot-pink via-mehndi-pink via-vibrant-orange to-warm-red px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,105,180,0.25)] transition-all duration-300 hover:border-mehndi-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,140,0,0.4)] active:scale-[0.985]"
+                >
+                  <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
+                  <span className="absolute inset-y-0 left-[-20%] w-1/3 rotate-12 bg-white/15 blur-xl transition-all duration-700 group-hover:left-[95%]" />
+                  <span className="relative font-cinzel text-sm tracking-[0.35em] text-cream uppercase text-magical-glow">
+                    Open RSVP Draft
+                  </span>
+                </button>
+              </div>
+            </form>
+          ) : (
+            <div className="relative py-10 text-center">
+              <div className="mb-6 flex items-center justify-center gap-4">
+                <div className="h-px w-14 bg-gradient-to-r from-transparent to-mehndi-pink/60" />
+                <div className="h-2 w-2 rotate-45 border border-hot-pink/70 animate-sparkle" />
+                <div className="h-px w-14 bg-gradient-to-l from-transparent to-vibrant-orange/60" />
+              </div>
+              <h2 className="font-cinzel text-3xl tracking-[0.2em] text-hot-pink text-magical-glow md:text-4xl">
+                THANK YOU FOR YOUR RSVP!
+              </h2>
+              <p className="mx-auto mt-4 max-w-xl font-playfair text-2xl italic text-vibrant-orange/80">
+                {formData.name ? `${formData.name}, your RSVP has been recorded. We can't wait to celebrate with you!` : 'Your RSVP has been recorded. We can\'t wait to celebrate with you!'}
               </p>
             </div>
-
-            <div className="pt-2">
-              <button
-                type="submit"
-                className="group relative w-full overflow-hidden rounded-full border border-hot-pink/40 bg-gradient-to-r from-hot-pink via-mehndi-pink via-vibrant-orange to-warm-red px-8 py-4 shadow-[0_14px_35px_rgba(0,0,0,0.35),_0_0_30px_rgba(255,105,180,0.25)] transition-all duration-300 hover:border-mehndi-pink/70 hover:shadow-[0_18px_40px_rgba(0,0,0,0.4),_0_0_50px_rgba(255,140,0,0.4)] active:scale-[0.985]"
-              >
-                <span className="pointer-events-none absolute inset-[1px] rounded-full border border-cream/10" />
-                <span className="absolute inset-y-0 left-[-20%] w-1/3 rotate-12 bg-white/15 blur-xl transition-all duration-700 group-hover:left-[95%]" />
-                <span className="relative font-cinzel text-sm tracking-[0.35em] text-cream uppercase text-magical-glow">
-                  Open RSVP Draft
-                </span>
-              </button>
-            </div>
-
-            {statusMessage ? (
-              <p
-                className="text-center font-montserrat text-sm text-vibrant-orange/80"
-              >
-                {statusMessage}
-              </p>
-            ) : null}
-          </form>
+          )}
         </div>
       </div>
     </section>
